@@ -59,4 +59,8 @@ return require('packer').startup(function(use)
             require('lualine').setup()
         end,
     })
+
+    -- Snippets
+    use('SirVer/ultisnips')
+    use('honza/vim-snippets')
 end)

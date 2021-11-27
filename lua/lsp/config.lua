@@ -1,6 +1,6 @@
 local lsp_installer = require('nvim-lsp-installer')
 
-local on_attach = function(client)
+local on_attach = function()
     vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
 end
 
