@@ -19,7 +19,9 @@
     - [x] remove error message for `vim`
     - [x] remove errore message for `use`
     - [x] setup vim api completion
- - [ ] change this ugly ass theme
+ ** Theme
+    - [x] update status line
+    - [x] change this ugly ass theme
  - [ ] clean up file structure
  - [ ] setup git flow
  - [ ] setup terminal
