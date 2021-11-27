@@ -138,6 +138,11 @@ _G.packer_plugins = {
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  ["palenight.vim"] = {
+    loaded = true,
+    path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/palenight.vim",
+    url = "https://github.com/drewtempelmeyer/palenight.vim"
+  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/plenary.nvim",
@@ -160,14 +165,14 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-lsp-installer]], true)
 require('lsp.config')
 time([[Config for nvim-lsp-installer]], false)
--- Config for: null-ls.nvim
-time([[Config for null-ls.nvim]], true)
-require('lsp.null-ls-config')
-time([[Config for null-ls.nvim]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 require('plugins.treesitter')
 time([[Config for nvim-treesitter]], false)
+-- Config for: null-ls.nvim
+time([[Config for null-ls.nvim]], true)
+require('lsp.null-ls-config')
+time([[Config for null-ls.nvim]], false)
 -- Config for: neorg
 time([[Config for neorg]], true)
 require('plugins.neorg')

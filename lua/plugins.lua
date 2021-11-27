@@ -49,4 +49,7 @@ return require('packer').startup(function(use)
         config = "require('plugins.neorg')",
         requires = 'nvim-lua/plenary.nvim',
     })
+
+    -- Theme
+    use('drewtempelmeyer/palenight.vim')
 end)

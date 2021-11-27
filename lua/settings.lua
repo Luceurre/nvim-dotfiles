@@ -45,3 +45,5 @@ vim.g.mapleader = ' ' --- Map leader key
 vim.o.shortmess = vim.o.shortmess .. 'c' --- Don't pass messages to |ins-completion-menu|
 vim.o.expandtab = true
 vim.bo.expandtab = true
+vim.cmd('set background=dark')
+vim.cmd('colorscheme palenight')
