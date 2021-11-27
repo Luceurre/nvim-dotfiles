@@ -16,6 +16,7 @@ return require('packer').startup(function(use)
     -- LSP
     use('neovim/nvim-lspconfig')
     use({ 'williamboman/nvim-lsp-installer', config = "require('lsp.config')" })
+    use('folke/lua-dev.nvim')
 
     use({
         'jose-elias-alvarez/null-ls.nvim',
