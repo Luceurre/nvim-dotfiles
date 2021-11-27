@@ -1,0 +1,35 @@
+@document.meta
+        title: todos
+        description: 
+        author: pglandon
+        categories: 
+        created: 2021-11-27
+        version: 0.1
+@end
+
+* Features
+  - [x] format on save
+ ** add telescope keybindings
+    - [x] for project file search
+    - [ ] for git file search
+    - [ ] for regex
+    - [ ] for project symbol
+  - [x] setup "basic" autocompletion
+ ** Lua
+    - [x] remove error message for `vim`
+    - [x] remove errore message for `use`
+    - [x] setup vim api completion
+ - [ ] change this ugly ass theme
+ - [ ] clean up file structure
+ - [ ] setup git flow
+ - [ ] setup terminal
+ ** Typescript/React
+    - [ ] setup completion
+    - [ ] setup linting
+    - [ ] setup formating
+    - [ ] setup editorconfig
+ ** Refactoring
+    - [ ] setup rename
+    - [ ] move
+    - [ ] telescope refactoring window
+  - [ ] setup folding
