@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/opt/cmp-nvim-lua",
     url = "https://github.com/hrsh7th/cmp-nvim-lua"
   },
+  ["lsp-colors.nvim"] = {
+    loaded = true,
+    path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim",
+    url = "https://github.com/folke/lsp-colors.nvim"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
@@ -175,9 +180,16 @@ _G.packer_plugins = {
     url = "https://github.com/ThePrimeagen/refactoring.nvim"
   },
   ["telescope.nvim"] = {
+    config = { "require('plugins.telescope')" },
     loaded = true,
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["trouble.nvim"] = {
+    config = { "require('plugins.trouble')" },
+    loaded = true,
+    path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
   },
   ultisnips = {
     loaded = true,
@@ -196,6 +208,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for lualine.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\flualine\frequire\0", "config", "lualine.nvim")
 time([[Config for lualine.nvim]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+require('plugins.trouble')
+time([[Config for trouble.nvim]], false)
 -- Config for: neorg
 time([[Config for neorg]], true)
 require('plugins.neorg')
@@ -212,6 +228,10 @@ time([[Config for nvim-treesitter]], false)
 time([[Config for null-ls.nvim]], true)
 require('lsp.null-ls-config')
 time([[Config for null-ls.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require('plugins.telescope')
+time([[Config for telescope.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter-textobjects ]]

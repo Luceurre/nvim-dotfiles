@@ -17,17 +17,18 @@ return require('packer').startup(function(use)
     use('neovim/nvim-lspconfig')
     use({ 'williamboman/nvim-lsp-installer', config = "require('lsp.config')" })
     use('folke/lua-dev.nvim')
-
     use({
         'jose-elias-alvarez/null-ls.nvim',
         requires = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
         config = "require('lsp.null-ls-config')",
     })
+    use('folke/lsp-colors.nvim')
 
     -- Telescope
     use({
         'nvim-telescope/telescope.nvim',
         requires = { { 'nvim-lua/plenary.nvim' } },
+        config = "require('plugins.telescope')",
     })
 
     -- Completion
@@ -65,4 +66,11 @@ return require('packer').startup(function(use)
     -- Snippets
     use('SirVer/ultisnips')
     use('honza/vim-snippets')
+
+    -- Diagnostic
+    use({
+        'folke/trouble.nvim',
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = "require('plugins.trouble')",
+    })
 end)
