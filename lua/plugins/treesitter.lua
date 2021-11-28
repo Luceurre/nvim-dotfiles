@@ -63,4 +63,7 @@ require('nvim-treesitter.configs').setup({
             ["'"] = 'textsubjects-container-outer',
         },
     },
+    autotag = {
+        enable = true,
+    },
 })

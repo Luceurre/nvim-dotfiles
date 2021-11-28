@@ -11,6 +11,7 @@ return require('packer').startup(function(use)
     use({ 'nvim-treesitter/nvim-treesitter-textobjects', after = { 'nvim-treesitter' } })
     use({ 'RRethy/nvim-treesitter-textsubjects', after = { 'nvim-treesitter' } })
     use({ 'p00f/nvim-ts-rainbow', after = { 'nvim-treesitter' } })
+    use('windwp/nvim-ts-autotag')
 
     -- LSP
     use('neovim/nvim-lspconfig')
