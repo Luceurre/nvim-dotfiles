@@ -9,9 +9,7 @@ return require('packer').startup(function(use)
         run = ':TSUpdate',
     })
     use({ 'nvim-treesitter/nvim-treesitter-textobjects', after = { 'nvim-treesitter' } })
-
     use('p00f/nvim-ts-rainbow')
-    use({ 'nvim-treesitter/nvim-treesitter-textobjects', after = { 'nvim-treesitter' } })
 
     -- LSP
     use('neovim/nvim-lspconfig')
