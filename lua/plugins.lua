@@ -73,4 +73,10 @@ return require('packer').startup(function(use)
         requires = 'kyazdani42/nvim-web-devicons',
         config = "require('plugins.trouble')",
     })
+
+    -- Keymaps
+    use({
+        'folke/which-key.nvim',
+        config = "require('plugins.which-key')",
+    })
 end)
