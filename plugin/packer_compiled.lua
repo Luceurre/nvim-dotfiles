@@ -138,7 +138,7 @@ _G.packer_plugins = {
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-treesitter"] = {
-    after = { "nvim-treesitter-textobjects" },
+    after = { "nvim-treesitter-textobjects", "nvim-ts-rainbow", "nvim-treesitter-textsubjects" },
     loaded = true,
     only_config = true
   },
@@ -149,9 +149,18 @@ _G.packer_plugins = {
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textobjects",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
   },
-  ["nvim-ts-rainbow"] = {
+  ["nvim-treesitter-textsubjects"] = {
+    load_after = {},
     loaded = true,
-    path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
+    needs_bufread = false,
+    path = "/home/pglandon/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textsubjects",
+    url = "https://github.com/RRethy/nvim-treesitter-textsubjects"
+  },
+  ["nvim-ts-rainbow"] = {
+    load_after = {},
+    loaded = true,
+    needs_bufread = false,
+    path = "/home/pglandon/.local/share/nvim/site/pack/packer/opt/nvim-ts-rainbow",
     url = "https://github.com/p00f/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
@@ -210,10 +219,26 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+require('plugins.trouble')
+time([[Config for trouble.nvim]], false)
 -- Config for: which-key.nvim
 time([[Config for which-key.nvim]], true)
 require('plugins.which-key')
 time([[Config for which-key.nvim]], false)
+-- Config for: neorg
+time([[Config for neorg]], true)
+require('plugins.neorg')
+time([[Config for neorg]], false)
+-- Config for: nvim-lsp-installer
+time([[Config for nvim-lsp-installer]], true)
+require('lsp.config')
+time([[Config for nvim-lsp-installer]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require('plugins.telescope')
+time([[Config for telescope.nvim]], false)
 -- Config for: null-ls.nvim
 time([[Config for null-ls.nvim]], true)
 require('lsp.null-ls-config')
@@ -226,25 +251,11 @@ time([[Config for lualine.nvim]], false)
 time([[Config for nvim-treesitter]], true)
 require('plugins.treesitter')
 time([[Config for nvim-treesitter]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require('plugins.telescope')
-time([[Config for telescope.nvim]], false)
--- Config for: trouble.nvim
-time([[Config for trouble.nvim]], true)
-require('plugins.trouble')
-time([[Config for trouble.nvim]], false)
--- Config for: neorg
-time([[Config for neorg]], true)
-require('plugins.neorg')
-time([[Config for neorg]], false)
--- Config for: nvim-lsp-installer
-time([[Config for nvim-lsp-installer]], true)
-require('lsp.config')
-time([[Config for nvim-lsp-installer]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter-textobjects ]]
+vim.cmd [[ packadd nvim-ts-rainbow ]]
+vim.cmd [[ packadd nvim-treesitter-textsubjects ]]
 time([[Sequenced loading]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
