@@ -72,6 +72,38 @@ wk.register({
         r = { '<cmd>Telescope oldfiles<cr>', 'Recent File' },
         g = { '<cmd>Telescope git_files<cr>', 'Git File' },
     },
+    w = {
+        name = 'Window',
+        s = { '<C-w>v<C-w>l', 'Split Vertically' },
+        j = { '<C-w>j', 'Select below' },
+        k = { '<C-w>k', 'Select above' },
+        h = { '<C-w>h', 'Select left' },
+        l = { '<C-w>l', 'Select right' },
+        d = { '<C-w>q', 'Kill' },
+        ['<Tab>'] = { '<C-w>w', 'Switch' },
+    },
+    g = {
+        name = 'Goto',
+        d = { '<cmd>lua vim.lsp.buf.definition()<cr>', 'Definition' },
+        r = { '<cmd>lua vim.lsp.buf.references()<cr>', 'References' },
+        D = { '<Cmd>lua vim.lsp.buf.declaration()<CR>', 'Declaration' },
+        i = { '<cmd>lua vim.lsp.buf.implementation()<CR>', 'Implementation' },
+        t = { '<cmd>lua vim.lsp.buf.type_definition()<CR>', 'Type' },
+    },
+    d = {
+        name = 'Diagnostics',
+        n = { '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', 'Next' },
+        p = { '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', 'Prev' },
+    },
 }, {
     prefix = '<leader>',
+})
+
+wk.register({
+    g = {
+        name = 'Goto',
+        d = { '<cmd>lua vim.lsp.buf.definition()<cr>', 'Definition' },
+        r = { '<cmd>lua vim.lsp.buf.references()<cr>', 'References' },
+    },
+    K = { '<cmd>lua vim.lsp.buf.hover()<CR>', 'Hover' },
 })
