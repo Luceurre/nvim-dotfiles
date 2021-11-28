@@ -36,6 +36,7 @@ return require('packer').startup(function(use)
     use({ 'hrsh7th/nvim-cmp', event = 'InsertEnter', config = "require('lsp.cmp')" })
     use({ 'hrsh7th/cmp-nvim-lsp', requires = 'hrsh7th/nvim-cmp' })
     use({ 'hrsh7th/cmp-nvim-lua', requires = 'hrsh7th/nvim-cmp', after = { 'nvim-cmp' } })
+    use('ray-x/lsp_signature.nvim')
 
     -- Refactoring
     use({

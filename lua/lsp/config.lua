@@ -6,11 +6,18 @@ lsp_installer.on_server_ready(function(server)
     local opts = {}
 
     if server.name == 'sumneko_lua' then
-        opts = require('lua-dev').setup({})
+        opts = require('lua-dev').setup({
+            lspconfig = {
+                on_attach = function()
+                    require('lsp_signature').on_attach()
+                end,
+            },
+        })
     end
 
     if server.name == 'tsserver' then
         local on_attach = function(client, bufnr)
+            require('lsp_signature').on_attach()
             client.resolved_capabilities.document_formatting = false
             client.resolved_capabilities.document_range_formatting = false
 
