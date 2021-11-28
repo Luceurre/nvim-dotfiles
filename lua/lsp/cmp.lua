@@ -8,7 +8,17 @@ cmp.setup({
         end,
     },
     formatting = {
-        format = lspkind.cmp_format({ with_text = false, maxwidth = 50 }),
+        format = lspkind.cmp_format({
+            with_text = true,
+            maxwidth = 50,
+            menu = {
+                buffer = '[Buffer]',
+                nvim_lsp = '[LSP]',
+                luasnip = '[LuaSnip]',
+                nvim_lua = '[Lua]',
+                latex_symbols = '[Latex]',
+            },
+        }),
     },
     mapping = {
         ['<C-k>'] = cmp.mapping.select_prev_item(),

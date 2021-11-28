@@ -50,3 +50,9 @@ vim.cmd('set background=dark')
 vim.cmd('colorscheme palenight')
 vim.cmd("let g:lightline = { 'colorscheme': 'palenight' }")
 vim.cmd('let g:palenight_terminal_italics=1')
+
+vim.cmd([[
+let g:lsp_log_verbose = 1
+let g:lsp_log_file = expand('~/vim-lsp.log')
+let g:asyncomplete_log_file = expand('~/asyncomplete.log')
+]])

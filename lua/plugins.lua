@@ -82,4 +82,7 @@ return require('packer').startup(function(use)
 
     -- Utils
     use({ 'windwp/nvim-autopairs', after = { 'nvim-treesitter', 'nvim-cmp' }, config = "require('plugins.autopairs')" })
+
+    --- Typescript
+    use({ 'jose-elias-alvarez/nvim-lsp-ts-utils', requires = { 'nvim-lua/plenary.nvim' } })
 end)
