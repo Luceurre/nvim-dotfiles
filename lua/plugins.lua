@@ -79,4 +79,7 @@ return require('packer').startup(function(use)
         'folke/which-key.nvim',
         config = "require('plugins.which-key')",
     })
+
+    -- Utils
+    use({ 'windwp/nvim-autopairs', after = { 'nvim-treesitter', 'nvim-cmp' }, config = "require('plugins.autopairs')" })
 end)
