@@ -23,6 +23,7 @@ return require('packer').startup(function(use)
         config = "require('lsp.null-ls-config')",
     })
     use('folke/lsp-colors.nvim')
+    use({ 'tami5/lspsaga.nvim', config = "require('plugins.saga')" })
 
     -- Telescope
     use({
@@ -30,13 +31,15 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } },
         config = "require('plugins.telescope')",
     })
+    use({ 'gbrlsnchs/telescope-lsp-handlers.nvim' })
+    use({ 'nvim-telescope/telescope-ui-select.nvim' })
 
     -- Completion
     use('onsails/lspkind-nvim')
     use({ 'hrsh7th/nvim-cmp', event = 'InsertEnter', config = "require('lsp.cmp')" })
     use({ 'hrsh7th/cmp-nvim-lsp', requires = 'hrsh7th/nvim-cmp' })
     use({ 'hrsh7th/cmp-nvim-lua', requires = 'hrsh7th/nvim-cmp', after = { 'nvim-cmp' } })
-    use('ray-x/lsp_signature.nvim')
+    use({ 'ray-x/lsp_signature.nvim', config = "require('plugins.lsp_signature')" })
 
     -- Refactoring
     use({

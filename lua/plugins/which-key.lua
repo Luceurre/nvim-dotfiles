@@ -95,6 +95,10 @@ wk.register({
         n = { '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', 'Next' },
         p = { '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', 'Prev' },
     },
+    c = {
+        name = 'Code',
+        a = { '<cmd>lua vim.lsp.buf.code_action()<CR>', 'Action' },
+    },
 }, {
     prefix = '<leader>',
 })
@@ -104,6 +108,9 @@ wk.register({
         name = 'Goto',
         d = { '<cmd>lua vim.lsp.buf.definition()<cr>', 'Definition' },
         r = { '<cmd>lua vim.lsp.buf.references()<cr>', 'References' },
+        p = { "<cmd>lua require'lspsaga.provider'.preview_definition()<CR>", 'Peek' },
     },
-    K = { '<cmd>lua vim.lsp.buf.hover()<CR>', 'Hover' },
+    K = { "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", 'Hover' },
+    ['<C-k>'] = { "<cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>", 'Signature' },
+    ['<a-cr>'] = { '<cmd>lua vim.lsp.buf.code_action()<CR>', 'Code Action' },
 })

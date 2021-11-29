@@ -17,7 +17,6 @@ lsp_installer.on_server_ready(function(server)
 
     if server.name == 'tsserver' then
         local on_attach = function(client, bufnr)
-            require('lsp_signature').on_attach()
             client.resolved_capabilities.document_formatting = false
             client.resolved_capabilities.document_range_formatting = false
 
