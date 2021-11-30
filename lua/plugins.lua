@@ -106,6 +106,15 @@ return require('packer').startup(function(use)
             })
         end,
     })
+    use({
+        'windwp/nvim-spectre',
+        requires = { 'nvim-lua/plenary.nvim' },
+        config = function()
+            require('spectre').setup({
+                live_update = false,
+            })
+        end,
+    })
 
     --- Typescript
     use({ 'jose-elias-alvarez/nvim-lsp-ts-utils', requires = { 'nvim-lua/plenary.nvim' } })

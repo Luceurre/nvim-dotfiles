@@ -115,6 +115,17 @@ wk.register({
         name = 'Version',
         s = { '<cmd>Neogit<CR>', 'Status' },
     },
+    s = {
+        name = 'Search',
+        p = {
+            '<cmd>lua require("spectre").open()<CR>',
+            'Project',
+        },
+        f = {
+            '<cmd>lua require("spectre").open_file_search()',
+            'File',
+        },
+    },
 }, {
     prefix = '<leader>',
 })
