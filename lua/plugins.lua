@@ -86,6 +86,12 @@ return require('packer').startup(function(use)
 
     -- Utils
     use({ 'windwp/nvim-autopairs', after = { 'nvim-treesitter', 'nvim-cmp' }, config = "require('plugins.autopairs')" })
+    use({
+        'blackCauldron7/surround.nvim',
+        config = function()
+            require('surround').setup({ mappings_style = 'surround' })
+        end,
+    })
 
     --- Typescript
     use({ 'jose-elias-alvarez/nvim-lsp-ts-utils', requires = { 'nvim-lua/plenary.nvim' } })
