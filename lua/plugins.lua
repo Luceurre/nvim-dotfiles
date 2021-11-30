@@ -103,4 +103,11 @@ return require('packer').startup(function(use)
             vim.cmd("let g:gitblame_date_format = '%r'")
         end,
     })
+    use({
+        'lewis6991/gitsigns.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim',
+        },
+        config = "require('plugins.gitsigns')",
+    })
 end)

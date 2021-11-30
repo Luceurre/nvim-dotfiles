@@ -90,6 +90,12 @@ _G.packer_plugins = {
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/git-blame.nvim",
     url = "https://github.com/f-person/git-blame.nvim"
   },
+  ["gitsigns.nvim"] = {
+    config = { "require('plugins.gitsigns')" },
+    loaded = true,
+    path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   ["lsp-colors.nvim"] = {
     loaded = true,
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim",
@@ -146,7 +152,7 @@ _G.packer_plugins = {
     url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
-    after = { "cmp-nvim-lua", "nvim-autopairs" },
+    after = { "nvim-autopairs", "cmp-nvim-lua" },
     config = { "require('lsp.cmp')" },
     loaded = false,
     needs_bufread = false,
@@ -171,7 +177,7 @@ _G.packer_plugins = {
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-treesitter"] = {
-    after = { "nvim-treesitter-textobjects", "nvim-ts-rainbow", "nvim-treesitter-textsubjects", "nvim-autopairs" },
+    after = { "nvim-autopairs", "nvim-treesitter-textobjects", "nvim-ts-rainbow", "nvim-treesitter-textsubjects" },
     loaded = true,
     only_config = true
   },
@@ -273,30 +279,38 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: trouble.nvim
-time([[Config for trouble.nvim]], true)
-require('plugins.trouble')
-time([[Config for trouble.nvim]], false)
--- Config for: lspsaga.nvim
-time([[Config for lspsaga.nvim]], true)
-require('plugins.saga')
-time([[Config for lspsaga.nvim]], false)
--- Config for: neorg
-time([[Config for neorg]], true)
-require('plugins.neorg')
-time([[Config for neorg]], false)
--- Config for: null-ls.nvim
-time([[Config for null-ls.nvim]], true)
-require('lsp.null-ls-config')
-time([[Config for null-ls.nvim]], false)
+-- Config for: git-blame.nvim
+time([[Config for git-blame.nvim]], true)
+try_loadstring("\27LJ\2\nE\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0&let g:gitblame_date_format = '%r'\bcmd\bvim\0", "config", "git-blame.nvim")
+time([[Config for git-blame.nvim]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\flualine\frequire\0", "config", "lualine.nvim")
 time([[Config for lualine.nvim]], false)
+-- Config for: lspsaga.nvim
+time([[Config for lspsaga.nvim]], true)
+require('plugins.saga')
+time([[Config for lspsaga.nvim]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+require('plugins.gitsigns')
+time([[Config for gitsigns.nvim]], false)
 -- Config for: which-key.nvim
 time([[Config for which-key.nvim]], true)
 require('plugins.which-key')
 time([[Config for which-key.nvim]], false)
+-- Config for: nvim-lsp-installer
+time([[Config for nvim-lsp-installer]], true)
+require('lsp.config')
+time([[Config for nvim-lsp-installer]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+require('plugins.trouble')
+time([[Config for trouble.nvim]], false)
+-- Config for: neorg
+time([[Config for neorg]], true)
+require('plugins.neorg')
+time([[Config for neorg]], false)
 -- Config for: surround.nvim
 time([[Config for surround.nvim]], true)
 try_loadstring("\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\19mappings_style\rsurround\nsetup\rsurround\frequire\0", "config", "surround.nvim")
@@ -305,10 +319,6 @@ time([[Config for surround.nvim]], false)
 time([[Config for lsp_signature.nvim]], true)
 require('plugins.lsp_signature')
 time([[Config for lsp_signature.nvim]], false)
--- Config for: git-blame.nvim
-time([[Config for git-blame.nvim]], true)
-try_loadstring("\27LJ\2\nE\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0&let g:gitblame_date_format = '%r'\bcmd\bvim\0", "config", "git-blame.nvim")
-time([[Config for git-blame.nvim]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 require('plugins.telescope')
@@ -317,10 +327,10 @@ time([[Config for telescope.nvim]], false)
 time([[Config for nvim-treesitter]], true)
 require('plugins.treesitter')
 time([[Config for nvim-treesitter]], false)
--- Config for: nvim-lsp-installer
-time([[Config for nvim-lsp-installer]], true)
-require('lsp.config')
-time([[Config for nvim-lsp-installer]], false)
+-- Config for: null-ls.nvim
+time([[Config for null-ls.nvim]], true)
+require('lsp.null-ls-config')
+time([[Config for null-ls.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter-textsubjects ]]
