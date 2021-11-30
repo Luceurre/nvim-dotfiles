@@ -137,4 +137,12 @@ return require('packer').startup(function(use)
     use('ggandor/lightspeed.nvim')
     use('mfussenegger/nvim-ts-hint-textobject')
     use({ 'kevinhwang91/nvim-hlslens' })
+
+    -- Extra
+    use({
+        'glacambre/firenvim',
+        run = function()
+            vim.fn['firenvim#install'](0)
+        end,
+    })
 end)
