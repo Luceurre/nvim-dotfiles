@@ -92,6 +92,20 @@ return require('packer').startup(function(use)
             require('surround').setup({ mappings_style = 'surround' })
         end,
     })
+    use({
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup({
+                toggler = {
+                    line = 'ccc',
+                },
+
+                opleader = {
+                    line = 'cc',
+                },
+            })
+        end,
+    })
 
     --- Typescript
     use({ 'jose-elias-alvarez/nvim-lsp-ts-utils', requires = { 'nvim-lua/plenary.nvim' } })
