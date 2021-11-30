@@ -124,9 +124,54 @@ wk.register({
         name = 'Goto',
         d = { '<cmd>lua vim.lsp.buf.definition()<cr>', 'Definition' },
         r = { '<cmd>lua vim.lsp.buf.references()<cr>', 'References' },
+        D = { '<Cmd>lua vim.lsp.buf.declaration()<CR>', 'Declaration' },
+        i = { '<cmd>lua vim.lsp.buf.implementation()<CR>', 'Implementation' },
+        t = { '<cmd>lua vim.lsp.buf.type_definition()<CR>', 'Type' },
         p = { "<cmd>lua require'lspsaga.provider'.preview_definition()<CR>", 'Peek' },
+        w = { '<cmd>HopWord<CR>', 'Word' },
+        l = { '<cmd>HopLineStart<CR>', 'Line' },
     },
     K = { "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", 'Hover' },
     ['<C-k>'] = { "<cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>", 'Signature' },
     ['<a-cr>'] = { '<cmd>lua vim.lsp.buf.code_action()<CR>', 'Code Action' },
+    f = {
+        "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>",
+        '1-Char Backward',
+    },
+    F = {
+        "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>",
+        '1-Char Foward',
+    },
+    -- s = {
+    --     '<cmd>HopChar2<CR>',
+    --     'Snipe',
+    -- },
 })
+
+-- TODO: add those to which-key
+vim.api.nvim_set_keymap(
+    'o',
+    'f',
+    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>",
+    {}
+)
+vim.api.nvim_set_keymap(
+    'o',
+    'F',
+    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>",
+    {}
+)
+vim.api.nvim_set_keymap(
+    '',
+    'f',
+    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>",
+    {}
+)
+vim.api.nvim_set_keymap(
+    '',
+    'F',
+    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>",
+    {}
+)
+-- vim.api.nvim_set_keymap('o', 's', '<cmd>HopChar2<cr>', {})
+-- vim.api.nvim_set_keymap('', 's', '<cmd>HopChar2<cr>', {})

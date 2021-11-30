@@ -126,4 +126,13 @@ return require('packer').startup(function(use)
     })
     use({ 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim', config = "require('plugins.neogit')" })
     use({ 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim', config = "require('plugins.diffview')" })
+
+    -- Motion
+    use({
+        'phaazon/hop.nvim',
+        config = function()
+            require('hop').setup()
+        end,
+    })
+    use('ggandor/lightspeed.nvim')
 end)
