@@ -135,4 +135,5 @@ return require('packer').startup(function(use)
         end,
     })
     use('ggandor/lightspeed.nvim')
+    use('mfussenegger/nvim-ts-hint-textobject')
 end)

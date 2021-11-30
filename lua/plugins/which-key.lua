@@ -173,5 +173,9 @@ vim.api.nvim_set_keymap(
     "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>",
     {}
 )
+vim.cmd([[
+omap     <silent> n :<C-U>lua require('tsht').nodes()<CR>
+vnoremap <silent> n :lua require('tsht').nodes()<CR>
+]])
 -- vim.api.nvim_set_keymap('o', 's', '<cmd>HopChar2<cr>', {})
 -- vim.api.nvim_set_keymap('', 's', '<cmd>HopChar2<cr>', {})
