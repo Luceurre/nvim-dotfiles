@@ -99,6 +99,22 @@ wk.register({
         name = 'Code',
         a = { '<cmd>lua vim.lsp.buf.code_action()<CR>', 'Action' },
     },
+    h = {
+        name = 'Hunk',
+        s = { '<cmd>lua require"gitsigns".stage_hunk()<CR>', 'Stage' },
+        u = { '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>', 'Undo' },
+        r = { '<cmd>lua require"gitsigns".reset_hunk()<CR>', 'Reset' },
+        p = { '<cmd>lua require"gitsigns".preview_hunk()<CR>', 'Preview' },
+    },
+    b = {
+        name = 'Buffer',
+        s = { '<cmd>lua require"gitsigns".stage_buffer()<CR>', 'Stage' },
+        r = { '<cmd>lua require"gitsigns".reset_buffer()<CR>', 'Reset' },
+    },
+    v = {
+        name = 'Version',
+        s = { '<cmd>Neogit<CR>', 'Status' },
+    },
 }, {
     prefix = '<leader>',
 })
