@@ -177,5 +177,16 @@ vim.cmd([[
 omap     <silent> n :<C-U>lua require('tsht').nodes()<CR>
 vnoremap <silent> n :lua require('tsht').nodes()<CR>
 ]])
--- vim.api.nvim_set_keymap('o', 's', '<cmd>HopChar2<cr>', {})
--- vim.api.nvim_set_keymap('', 's', '<cmd>HopChar2<cr>', {})
+vim.cmd([[
+noremap <silent> n <Cmd>execute('normal! ' . v:count1 . 'n')<CR>
+            \<Cmd>lua require('hlslens').start()<CR>
+noremap <silent> N <Cmd>execute('normal! ' . v:count1 . 'N')<CR>
+            \<Cmd>lua require('hlslens').start()<CR>
+noremap * *<Cmd>lua require('hlslens').start()<CR>
+noremap # #<Cmd>lua require('hlslens').start()<CR>
+noremap g* g*<Cmd>lua require('hlslens').start()<CR>
+noremap g# g#<Cmd>lua require('hlslens').start()<CR>
+
+" use : instead of <Cmd>
+nnoremap <silent> <leader>l :noh<CR>
+]])
