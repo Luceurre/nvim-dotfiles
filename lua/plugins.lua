@@ -111,4 +111,5 @@ return require('packer').startup(function(use)
         config = "require('plugins.gitsigns')",
     })
     use({ 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim', config = "require('plugins.neogit')" })
+    use({ 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim', config = "require('plugins.diffview')" })
 end)
