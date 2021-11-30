@@ -95,4 +95,12 @@ return require('packer').startup(function(use)
 
     --- Typescript
     use({ 'jose-elias-alvarez/nvim-lsp-ts-utils', requires = { 'nvim-lua/plenary.nvim' } })
+
+    -- Git
+    use({
+        'f-person/git-blame.nvim',
+        config = function()
+            vim.cmd("let g:gitblame_date_format = '%r'")
+        end,
+    })
 end)
