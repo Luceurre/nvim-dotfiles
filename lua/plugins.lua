@@ -117,6 +117,7 @@ return require('packer').startup(function(use)
     })
     use('wellle/targets.vim')
     use({ 'monaqa/dial.nvim', config = "require('plugins.dial')" })
+    use('junegunn/fzf.vim')
 
     --- Typescript
     use({ 'jose-elias-alvarez/nvim-lsp-ts-utils', requires = { 'nvim-lua/plenary.nvim' } })
@@ -156,6 +157,7 @@ return require('packer').startup(function(use)
             vim.fn['firenvim#install'](0)
         end,
     })
+    use('glepnir/dashboard-nvim')
 
     -- CHADTree
     use({ 'ms-jpq/chadtree', branch = 'chad' })
