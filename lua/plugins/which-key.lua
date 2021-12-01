@@ -71,6 +71,7 @@ wk.register({
         f = { '<cmd>Telescope find_files<cr>', 'Find File' },
         r = { '<cmd>Telescope oldfiles<cr>', 'Recent File' },
         g = { '<cmd>Telescope git_files<cr>', 'Git File' },
+        t = { '<cmd>CHADopen<cr>', 'File Tree' },
     },
     w = {
         name = 'Window',
@@ -124,6 +125,13 @@ wk.register({
         f = {
             '<cmd>lua require("spectre").open_file_search()',
             'File',
+        },
+    },
+    t = {
+        name = 'Toggle',
+        b = {
+            '<Cmd>DialIncrement custom#boolean<CR>',
+            'Boolean',
         },
     },
 }, {
@@ -185,8 +193,8 @@ vim.api.nvim_set_keymap(
     {}
 )
 vim.cmd([[
-omap     <silent> n :<C-U>lua require('tsht').nodes()<CR>
-vnoremap <silent> n :lua require('tsht').nodes()<CR>
+omap     <silent> gn :<C-U>lua require('tsht').nodes()<CR>
+vnoremap <silent> gn :lua require('tsht').nodes()<CR>
 ]])
 vim.cmd([[
 noremap <silent> n <Cmd>execute('normal! ' . v:count1 . 'n')<CR>

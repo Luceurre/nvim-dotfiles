@@ -1,5 +1,5 @@
 require('nvim-autopairs').setup({
-    check_ts = true,
+    check_ts = false,
     map_c_w = true,
     fast_wrap = {
         map = '<M-e>',

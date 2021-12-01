@@ -115,6 +115,8 @@ return require('packer').startup(function(use)
             })
         end,
     })
+    use('wellle/targets.vim')
+    use({ 'monaqa/dial.nvim', config = "require('plugins.dial')" })
 
     --- Typescript
     use({ 'jose-elias-alvarez/nvim-lsp-ts-utils', requires = { 'nvim-lua/plenary.nvim' } })
