@@ -154,4 +154,7 @@ return require('packer').startup(function(use)
             vim.fn['firenvim#install'](0)
         end,
     })
+
+    -- CHADTree
+    use({ 'ms-jpq/chadtree', branch = 'chad' })
 end)
