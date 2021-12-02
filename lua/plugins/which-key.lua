@@ -128,7 +128,42 @@ wk.register({
         },
     },
     t = {
-        name = 'Toggle',
+        name = 'Test',
+        n = {
+            '<Plug>(ultest-next-fail)',
+            'Next',
+        },
+        p = {
+            '<Plug>(ultest-prev-fail)',
+            'Previous',
+        },
+        f = {
+            '<Plug>(ultest-run-file)',
+            'File',
+        },
+        c = {
+            '<Plug>(ultest-run-nearest)',
+            'Under cursor',
+        },
+        l = {
+            '<Plug>(ultest-run-last)',
+            'Last',
+        },
+        s = {
+            '<Plug>(ultest-summary-toggle)',
+            'Summary',
+        },
+        j = {
+            '<Plug>(ultest-output-jump)',
+            'Jump',
+        },
+        d = {
+            '<Plug>(ultest-debug-nearest)',
+            'Debug',
+        },
+    },
+    m = {
+        name = 'Misc',
         b = {
             '<Cmd>DialIncrement custom#boolean<CR>',
             'Boolean',
