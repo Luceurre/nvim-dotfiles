@@ -161,4 +161,13 @@ return require('packer').startup(function(use)
 
     -- CHADTree
     use({ 'ms-jpq/chadtree', branch = 'chad' })
+
+    -- Tabs
+    use({
+        'akinsho/bufferline.nvim',
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function()
+            require('bufferline').setup({})
+        end,
+    })
 end)
