@@ -192,6 +192,8 @@ vim.api.nvim_set_keymap(
     "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>",
     {}
 )
+vim.api.nvim_set_keymap('v', 'z', '<Plug>Lightspeed_s', {})
+vim.api.nvim_set_keymap('v', 'Z', '<Plug>Lightspeed_S', {})
 vim.cmd([[
 omap     <silent> gn :<C-U>lua require('tsht').nodes()<CR>
 vnoremap <silent> gn :lua require('tsht').nodes()<CR>
@@ -205,7 +207,6 @@ noremap * *<Cmd>lua require('hlslens').start()<CR>
 noremap # #<Cmd>lua require('hlslens').start()<CR>
 noremap g* g*<Cmd>lua require('hlslens').start()<CR>
 noremap g# g#<Cmd>lua require('hlslens').start()<CR>
-
 " use : instead of <Cmd>
 nnoremap <silent> <leader>l :noh<CR>
 ]])

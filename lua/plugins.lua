@@ -170,4 +170,14 @@ return require('packer').startup(function(use)
             require('bufferline').setup({})
         end,
     })
+
+    -- Tests
+    use({
+        'rcarriga/vim-ultest',
+        requires = { 'vim-test/vim-test' },
+        run = ':UpdateRemotePlugins',
+        config = function()
+            vim.cmd('let g:ultest_use_pty = 1')
+        end,
+    })
 end)
