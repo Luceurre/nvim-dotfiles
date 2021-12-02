@@ -15,6 +15,17 @@ lsp_installer.on_server_ready(function(server)
         })
     end
 
+    if server.name == 'jdtls' then
+        opts = {
+            capabilities = capabilities,
+            on_attach = function(client)
+                client.resolved_capabilities.document_formatting = false
+                client.resolved_capabilities.document_range_formatting = false
+                require('lsp_signature').on_attach()
+            end,
+        }
+    end
+
     if server.name == 'tsserver' then
         local on_attach = function(client, bufnr)
             client.resolved_capabilities.document_formatting = false
