@@ -24,6 +24,8 @@ return require('packer').startup(function(use)
     })
     use('folke/lsp-colors.nvim')
     use({ 'tami5/lspsaga.nvim', config = "require('plugins.saga')" })
+    use('mfussenegger/nvim-jdtls')
+    use('mfussenegger/nvim-dap')
 
     -- Telescope
     use({
