@@ -115,6 +115,7 @@ wk.register({
     v = {
         name = 'Version',
         s = { '<cmd>Neogit<CR>', 'Status' },
+        l = { '<cmd>lua _lazygit_toggle()<CR>', 'Lazygit' },
     },
     s = {
         name = 'Search',

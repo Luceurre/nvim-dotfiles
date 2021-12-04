@@ -182,4 +182,7 @@ return require('packer').startup(function(use)
             vim.cmd('let g:ultest_use_pty = 1')
         end,
     })
+
+    -- Terminal
+    use({ 'akinsho/toggleterm.nvim', config = "require('plugins.toggleterm')" })
 end)
