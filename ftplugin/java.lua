@@ -2,6 +2,12 @@
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 local workspace_dir = '/home/pglandon/.local/lsp/jdtls/workspaces/' .. project_name
 
+local bundles = {
+    vim.fn.glob(
+        '/home/pglandon/.local/dap/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar'
+    ),
+}
+vim.list_extend(bundles, vim.split(vim.fn.glob('/home/pglandon/.local/dap/java/vscode-java-test/server/*.jar'), '\n'))
 local config = {
     -- The command that starts the language server
     -- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
@@ -28,6 +34,15 @@ local config = {
             },
         },
     },
+    ['init_options'] = {
+        bundles = bundles,
+    },
+    on_attach = function(client, bufnr)
+        -- With `hotcodereplace = 'auto' the debug adapter will try to apply code changes
+        -- you make during a debug session immediately.
+        -- Remove the option if you do not want that.
+        require('jdtls').setup_dap({ hotcodereplace = 'auto' })
+    end,
 }
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
