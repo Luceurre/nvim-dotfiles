@@ -68,10 +68,10 @@ wk.setup({
 wk.register({
     f = {
         name = 'File',
-        f = { '<cmd>Telescope find_files<cr>', 'Find File' },
-        r = { '<cmd>Telescope oldfiles<cr>', 'Recent File' },
-        g = { '<cmd>Telescope git_files<cr>', 'Git File' },
-        t = { '<cmd>CHADopen<cr>', 'File Tree' },
+        f = { '<cmd>Telescope find_files<cr>', 'Find' },
+        r = { '<cmd>Telescope oldfiles<cr>', 'Recent' },
+        g = { '<cmd>Telescope git_files<cr>', 'Git' },
+        t = { '<cmd>CHADopen<cr>', 'File' },
     },
     w = {
         name = 'Window',
@@ -100,7 +100,7 @@ wk.register({
         name = 'Code',
         a = { '<cmd>lua vim.lsp.buf.code_action()<CR>', 'Action' },
     },
-    h = {
+    H = {
         name = 'Hunk',
         s = { '<cmd>lua require"gitsigns".stage_hunk()<CR>', 'Stage' },
         u = { '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>', 'Undo' },
@@ -111,11 +111,20 @@ wk.register({
         name = 'Buffer',
         s = { '<cmd>lua require"gitsigns".stage_buffer()<CR>', 'Stage' },
         r = { '<cmd>lua require"gitsigns".reset_buffer()<CR>', 'Reset' },
+        f = { '<cmd>lua require("telescope.builtin").buffers()<CR>', 'Find' },
     },
     v = {
         name = 'Version',
-        s = { '<cmd>Neogit<CR>', 'Status' },
+        n = { '<cmd>Neogit<CR>', 'Neogit' },
         l = { '<cmd>lua _lazygit_toggle()<CR>', 'Lazygit' },
+        c = { '<cmd>lua require"telescope.builtin".git_commits()<CR>', 'Commits' },
+        b = { '<cmd>lua require"telescope.builtin".git_branches()<CR>', 'Branches' },
+        d = { '<cmd>lua require"telescope.builtin".git_bcommits()<CR>' },
+        s = { '<cmd>lua require"telescope.builtin".git_status()<CR>' },
+    },
+    o = {
+        name = 'Open',
+        t = { '<Cmd>exe v:count1 . "ToggleTerm"<CR>', 'Terminal' },
     },
     s = {
         name = 'Search',
@@ -127,11 +136,26 @@ wk.register({
             '<cmd>lua require("spectre").open_file_search()',
             'File',
         },
+        h = {
+            '<cmd>lua require"telescope.builtin".pickers()<CR>',
+            'History',
+        },
+        g = {
+            '<cmd>lua require"telescope.builtin".live_grep()<CR>',
+            'Grep',
+        },
+        s = { '<cmd>lua require"telescope.builtin".treesitter()<CR>' },
+    },
+    h = {
+        name = 'Help',
+        c = { '<cmd>lua require"telescope.builtin".commands()<CR>', 'Command List' },
+        m = { '<cmd>lua require"telescope.builtin".man_pages()<CR>', 'Man pages' },
+        k = { '<cmd>lua require"telescope.builtin".keymaps()<CR>', 'Keymaps' },
     },
     t = {
         name = 'Test',
         n = {
-            '<Plug>(ultest-next-fail)',
+            '<Plu>(ultest-next-fail)',
             'Next',
         },
         p = {

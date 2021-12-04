@@ -1,7 +1,3 @@
-require('toggleterm').setup({
-    open_mapping = [[<leader>ot]],
-})
-
 local Terminal = require('toggleterm.terminal').Terminal
 local lazygit = Terminal:new({
     cmd = 'lazygit',
