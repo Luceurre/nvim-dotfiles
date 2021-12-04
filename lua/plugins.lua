@@ -35,6 +35,7 @@ return require('packer').startup(function(use)
     })
     use({ 'gbrlsnchs/telescope-lsp-handlers.nvim' })
     use({ 'nvim-telescope/telescope-ui-select.nvim' })
+    use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
 
     -- Completion
     use('onsails/lspkind-nvim')
