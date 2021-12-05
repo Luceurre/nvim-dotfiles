@@ -39,13 +39,14 @@ return require('packer').startup(function(use)
     use({
         'AckslD/nvim-neoclip.lua',
         config = function()
-            require('neoclip').setup()
+            require('neoclip').setup({
+                enable_persistant_history = true,
+            })
         end,
         requires = { 'tami5/sqlite.lua', module = 'sqlite' },
     })
     use({
         'sudormrfbin/cheatsheet.nvim',
-
         requires = {
             { 'nvim-telescope/telescope.nvim' },
             { 'nvim-lua/popup.nvim' },
@@ -53,6 +54,14 @@ return require('packer').startup(function(use)
         },
     })
     use('nvim-telescope/telescope-dap.nvim')
+    use('fhill2/telescope-ultisnips.nvim')
+    use({
+        'rmagatti/session-lens',
+        requires = { 'rmagatti/auto-session', 'nvim-telescope/telescope.nvim' },
+        config = function()
+            require('session-lens').setup({})
+        end,
+    })
 
     -- Completion
     use('onsails/lspkind-nvim')
@@ -82,19 +91,7 @@ return require('packer').startup(function(use)
     use({
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-        config = function()
-            require('lualine').setup({
-                sections = {
-                    lualine_a = { 'mode' },
-                    lualine_b = { 'branch', 'diff', { 'diagnostics', sources = { 'nvim_lsp', 'coc' } } },
-                    lualine_c = { 'filename', '%{&ft == "toggleterm" ? "terminal (".b:toggle_number.")" : ""}' },
-
-                    lualine_x = { 'encoding', 'fileformat', 'filetype' },
-                    lualine_y = { 'progress' },
-                    lualine_z = { 'location' },
-                },
-            })
-        end,
+        config = "require('plugins.lualine')",
     })
 
     -- Snippets
@@ -188,6 +185,12 @@ return require('packer').startup(function(use)
         end,
     })
     use('glepnir/dashboard-nvim')
+    use({
+        'rmagatti/auto-session',
+        config = function()
+            require('auto-session').setup({})
+        end,
+    })
 
     -- CHADTree
     use({ 'ms-jpq/chadtree', branch = 'chad' })

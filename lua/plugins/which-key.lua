@@ -66,6 +66,10 @@ wk.setup({
 })
 
 wk.register({
+    p = {
+        name = 'Project',
+        f = { '<cmd>SearchSession<CR>', 'Find' },
+    },
     f = {
         name = 'File',
         f = { '<cmd>Telescope find_files<cr>', 'Find' },
@@ -75,7 +79,8 @@ wk.register({
     },
     w = {
         name = 'Window',
-        s = { '<C-w>v<C-w>l', 'Split Vertically' },
+        s = { '<C-w>s<C-w>j', 'Split' },
+        v = { '<C-w>v<C-w>l', 'Split Vertically' },
         j = { '<C-w>j', 'Select below' },
         k = { '<C-w>k', 'Select above' },
         h = { '<C-w>h', 'Select left' },
@@ -204,6 +209,10 @@ wk.register({
         v = { '<cmd>lua require"telescope".extensions.dap.variables{}<CR>', 'Variables' },
         f = { '<cmd>lua require"telescope".extensions.dap.frames{}<CR>', 'Frames' },
     },
+    i = {
+        name = 'Insert',
+        s = { "<CMD>lua require'telescope'.extensions.ultisnips.ultisnips{}<CR>", 'Snippet' },
+    },
 }, {
     prefix = '<leader>',
 })
@@ -236,7 +245,6 @@ wk.register({
     --     'Snipe',
     -- },
 })
-
 -- TODO: add those to which-key
 vim.api.nvim_set_keymap(
     'o',
