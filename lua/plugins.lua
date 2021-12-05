@@ -43,6 +43,15 @@ return require('packer').startup(function(use)
         end,
         requires = { 'tami5/sqlite.lua', module = 'sqlite' },
     })
+    use({
+        'sudormrfbin/cheatsheet.nvim',
+
+        requires = {
+            { 'nvim-telescope/telescope.nvim' },
+            { 'nvim-lua/popup.nvim' },
+            { 'nvim-lua/plenary.nvim' },
+        },
+    })
 
     -- Completion
     use('onsails/lspkind-nvim')
