@@ -52,6 +52,7 @@ return require('packer').startup(function(use)
             { 'nvim-lua/plenary.nvim' },
         },
     })
+    use('nvim-telescope/telescope-dap.nvim')
 
     -- Completion
     use('onsails/lspkind-nvim')

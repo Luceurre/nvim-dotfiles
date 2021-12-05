@@ -196,6 +196,14 @@ wk.register({
             'Boolean',
         },
     },
+    D = {
+        name = 'Debug',
+        B = { '<cmd>lua require"telescope".extensions.dap.list_breakpoints{}<CR>', 'Breakpoints' },
+        C = { '<cmd>lua require"telescope".extensions.dap.configurations{}<CR>', 'Configurations' },
+        c = { '<cmd>lua require"telescope".extensions.dap.commands{}<CR>', 'Commands' },
+        v = { '<cmd>lua require"telescope".extensions.dap.variables{}<CR>', 'Variables' },
+        f = { '<cmd>lua require"telescope".extensions.dap.frames{}<CR>', 'Frames' },
+    },
 }, {
     prefix = '<leader>',
 })
