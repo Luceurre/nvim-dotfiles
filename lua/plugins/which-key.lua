@@ -288,3 +288,11 @@ noremap g# g#<Cmd>lua require('hlslens').start()<CR>
 " use : instead of <Cmd>
 nnoremap <silent> <leader>l :noh<CR>
 ]])
+
+-- Disable arrow keys in operation, motion, normal and visual modes
+vim.cmd([[
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+]])
