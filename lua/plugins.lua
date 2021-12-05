@@ -69,6 +69,11 @@ return require('packer').startup(function(use)
     use({ 'hrsh7th/cmp-nvim-lsp', requires = 'hrsh7th/nvim-cmp' })
     use({ 'hrsh7th/cmp-nvim-lua', requires = 'hrsh7th/nvim-cmp', after = { 'nvim-cmp' } })
     use({ 'ray-x/lsp_signature.nvim', config = "require('plugins.lsp_signature')" })
+    use({ 'lukas-reineke/cmp-rg', after = 'nvim-cmp' })
+    use({ 'hrsh7th/cmp-path', after = 'nvim-cmp' })
+    use({ 'hrsh7th/cmp-buffer', after = 'nvim-cmp' })
+    use({ 'hrsh7th/cmp-nvim-lsp-document-symbol', after = 'nvim-cmp' })
+    use({ 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' })
 
     -- Refactoring
     use({

@@ -14,9 +14,11 @@ cmp.setup({
             menu = {
                 buffer = '[Buffer]',
                 nvim_lsp = '[LSP]',
-                luasnip = '[LuaSnip]',
+                ultisnips = '[UltiSnip]',
                 nvim_lua = '[Lua]',
                 latex_symbols = '[Latex]',
+                rg = '[Rg]',
+                path = '[Path]',
             },
         }),
     },
@@ -25,7 +27,7 @@ cmp.setup({
         ['<C-j>'] = cmp.mapping.select_next_item(),
         ['<C-d>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
         ['<C-e>'] = cmp.mapping.close(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
         ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
@@ -35,5 +37,23 @@ cmp.setup({
         { name = 'nvim_lsp' },
         { name = 'nvim_lua' },
         { name = 'ultisnips' },
+        { name = 'buffer' },
+        { name = 'path' },
+        -- { name = 'rg' },
     }),
+    native_menu = false,
+})
+
+cmp.setup.cmdline('/', {
+    sources = cmp.config.sources({
+        { name = 'nvim_lsp_document_symbol' },
+    }, {
+        { name = 'buffer' },
+    }),
+})
+
+cmp.setup.cmdline(':', {
+    sources = {
+        { name = 'cmdline' },
+    },
 })
