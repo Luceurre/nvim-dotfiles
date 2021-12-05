@@ -289,6 +289,8 @@ return require('packer').startup(function(use)
         end,
     })
 
-    -- Terminal
+    -- Terminal and REPL
     use({ 'akinsho/toggleterm.nvim', config = "require('plugins.toggleterm')" })
+    use({ 'michaelb/sniprun', run = 'bash ./install.sh' })
+    use('pianocomposer321/yabs.nvim')
 end)
