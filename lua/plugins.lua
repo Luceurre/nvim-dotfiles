@@ -53,6 +53,14 @@ return require('packer').startup(function(use)
             })
         end,
     })
+    use({
+        'romgrk/nvim-treesitter-context',
+        config = function()
+            require('treesitter-context').setup({
+                enable = false,
+            })
+        end,
+    })
 
     -- Telescope
     use({
@@ -163,7 +171,6 @@ return require('packer').startup(function(use)
                 toggler = {
                     line = 'ccc',
                 },
-
                 opleader = {
                     line = 'cc',
                 },
@@ -182,6 +189,31 @@ return require('packer').startup(function(use)
     use('wellle/targets.vim')
     use({ 'monaqa/dial.nvim', config = "require('plugins.dial')" })
     use('junegunn/fzf.vim')
+    use('mizlan/iswap.nvim')
+    use({
+        'abecodes/tabout.nvim',
+        config = function()
+            require('tabout').setup({
+                tabkey = '', -- key to trigger tabout, set to an empty string to disable
+                backwards_tabkey = '', -- key to trigger backwards tabout, set to an empty string to disable
+                act_as_tab = true, -- shift content if tab out is not possible
+                act_as_shift_tab = false, -- reverse shift content if tab out is not possible (if your keyboard/terminal supports <S-Tab>)
+                enable_backwards = true, -- well ...
+                completion = true, -- if the tabkey is used in a completion pum
+                tabouts = {
+                    { open = "'", close = "'" },
+                    { open = '"', close = '"' },
+                    { open = '`', close = '`' },
+                    { open = '(', close = ')' },
+                    { open = '[', close = ']' },
+                    { open = '{', close = '}' },
+                },
+                ignore_beginning = true, --[[ if the cursor is at the beginning of a filled element it will rather tab out than shift the content ]]
+                exclude = {}, -- tabout will ignore these filetypes
+            })
+        end,
+        after = 'nvim-cmp',
+    })
 
     --- Typescript
     use({ 'jose-elias-alvarez/nvim-lsp-ts-utils', requires = { 'nvim-lua/plenary.nvim' } })
