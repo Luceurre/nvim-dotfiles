@@ -296,3 +296,10 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 ]])
+
+vim.cmd([[
+vnoremap jk <ESC>
+vnoremap <C-g> <ESC>
+inoremap jk <ESC>
+inoremap <C-g> <ESC>
+]])
