@@ -26,6 +26,33 @@ return require('packer').startup(function(use)
     use({ 'tami5/lspsaga.nvim', config = "require('plugins.saga')" })
     use('mfussenegger/nvim-jdtls')
     use('mfussenegger/nvim-dap')
+    use('simrat39/symbols-outline.nvim')
+    use({
+        'tamago324/nlsp-settings.nvim',
+        config = function()
+            require('nlspsettings').setup()
+        end,
+    })
+    use({
+        'ldelossa/calltree.nvim',
+        config = function()
+            require('calltree').setup({})
+        end,
+    })
+    use({
+        'code-biscuits/nvim-biscuits',
+        config = function()
+            require('nvim-biscuits').setup({
+                default_config = {
+                    max_length = 1,
+                    min_distance = 5,
+                    prefix_string = ' ✨ ',
+                },
+                trim_by_words = true,
+                max_length = 2,
+            })
+        end,
+    })
 
     -- Telescope
     use({
@@ -65,7 +92,11 @@ return require('packer').startup(function(use)
 
     -- Completion
     use('onsails/lspkind-nvim')
-    use({ 'hrsh7th/nvim-cmp', event = 'InsertEnter', config = "require('lsp.cmp')" })
+    use({
+        'hrsh7th/nvim-cmp',
+        event = 'InsertEnter',
+        config = "require('lsp.cmp')",
+    })
     use({ 'hrsh7th/cmp-nvim-lsp', requires = 'hrsh7th/nvim-cmp' })
     use({ 'hrsh7th/cmp-nvim-lua', requires = 'hrsh7th/nvim-cmp', after = { 'nvim-cmp' } })
     use({ 'ray-x/lsp_signature.nvim', config = "require('plugins.lsp_signature')" })

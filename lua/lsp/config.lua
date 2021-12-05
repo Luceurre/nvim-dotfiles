@@ -3,7 +3,9 @@ local lsp_installer = require('nvim-lsp-installer')
 lsp_installer.on_server_ready(function(server)
     local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-    local opts = {}
+    local opts = {
+        capabilities = capabilities,
+    }
 
     if server.name == 'sumneko_lua' then
         opts = require('lua-dev').setup({
@@ -25,6 +27,13 @@ lsp_installer.on_server_ready(function(server)
     --         end,
     --     }
     -- end
+    if server.name == 'jsonls' then
+        opts.settings = {
+            json = {
+                schemas = require('nlspsettings.jsonls').get_default_schemas(),
+            },
+        }
+    end
 
     if server.name == 'tsserver' then
         local on_attach = function(client, bufnr)

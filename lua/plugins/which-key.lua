@@ -104,6 +104,7 @@ wk.register({
     c = {
         name = 'Code',
         a = { '<cmd>lua vim.lsp.buf.code_action()<CR>', 'Action' },
+        o = { '<cmd>SymbolsOutline<CR>', 'Outline' },
     },
     H = {
         name = 'Hunk',
