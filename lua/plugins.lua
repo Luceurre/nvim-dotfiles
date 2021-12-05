@@ -93,6 +93,7 @@ return require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true },
         config = "require('plugins.lualine')",
     })
+    use('folke/tokyonight.nvim')
 
     -- Snippets
     use('SirVer/ultisnips')

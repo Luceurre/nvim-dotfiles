@@ -47,7 +47,7 @@ vim.o.expandtab = true
 vim.bo.expandtab = true
 
 vim.cmd('set background=dark')
-vim.cmd('colorscheme palenight')
+vim.cmd('colorscheme tokyonight')
 vim.cmd([[
 highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6
 highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6
@@ -56,7 +56,6 @@ highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0
 highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE
 highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
 ]])
-vim.cmd("let g:lightline = { 'colorscheme': 'palenight' }")
 vim.cmd('let g:palenight_terminal_italics=1')
 
 vim.cmd([[
