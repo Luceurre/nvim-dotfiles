@@ -36,6 +36,13 @@ return require('packer').startup(function(use)
     use({ 'gbrlsnchs/telescope-lsp-handlers.nvim' })
     use({ 'nvim-telescope/telescope-ui-select.nvim' })
     use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
+    use({
+        'AckslD/nvim-neoclip.lua',
+        config = function()
+            require('neoclip').setup()
+        end,
+        requires = { 'tami5/sqlite.lua', module = 'sqlite' },
+    })
 
     -- Completion
     use('onsails/lspkind-nvim')

@@ -71,7 +71,7 @@ wk.register({
         f = { '<cmd>Telescope find_files<cr>', 'Find' },
         r = { '<cmd>Telescope oldfiles<cr>', 'Recent' },
         g = { '<cmd>Telescope git_files<cr>', 'Git' },
-        t = { '<cmd>CHADopen<cr>', 'File' },
+        t = { '<cmd>CHADopen<cr>', 'Tree' },
     },
     w = {
         name = 'Window',
@@ -119,8 +119,8 @@ wk.register({
         l = { '<cmd>lua _lazygit_toggle()<CR>', 'Lazygit' },
         c = { '<cmd>lua require"telescope.builtin".git_commits()<CR>', 'Commits' },
         b = { '<cmd>lua require"telescope.builtin".git_branches()<CR>', 'Branches' },
-        d = { '<cmd>lua require"telescope.builtin".git_bcommits()<CR>' },
-        s = { '<cmd>lua require"telescope.builtin".git_status()<CR>' },
+        d = { '<cmd>lua require"telescope.builtin".git_bcommits()<CR>', 'Diff' },
+        s = { '<cmd>lua require"telescope.builtin".git_status()<CR>', 'Status' },
     },
     o = {
         name = 'Open',
@@ -128,9 +128,9 @@ wk.register({
     },
     s = {
         name = 'Search',
-        p = {
+        r = {
             '<cmd>lua require("spectre").open()<CR>',
-            'Project',
+            'Replace',
         },
         f = {
             '<cmd>lua require("spectre").open_file_search()',
@@ -144,7 +144,9 @@ wk.register({
             '<cmd>lua require"telescope.builtin".live_grep()<CR>',
             'Grep',
         },
-        s = { '<cmd>lua require"telescope.builtin".treesitter()<CR>' },
+        s = { '<cmd>lua require"telescope.builtin".treesitter()<CR>', 'Symbol' },
+        p = { '<cmd>lua require"telescope.builtin".builtin()<CR>', 'Picker' },
+        c = { '<cmd>lua require("telescope").extensions.neoclip.default()<CR>', 'Clipboard' },
     },
     h = {
         name = 'Help',
