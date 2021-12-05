@@ -214,6 +214,12 @@ return require('packer').startup(function(use)
         end,
         after = 'nvim-cmp',
     })
+    use({
+        'luukvbaal/stabilize.nvim',
+        config = function()
+            require('stabilize').setup()
+        end,
+    })
 
     --- Typescript
     use({ 'jose-elias-alvarez/nvim-lsp-ts-utils', requires = { 'nvim-lua/plenary.nvim' } })
