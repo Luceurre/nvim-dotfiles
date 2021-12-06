@@ -168,6 +168,16 @@ _G.packer_plugins = {
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/opt/cmp-rg",
     url = "https://github.com/lukas-reineke/cmp-rg"
   },
+  ["cmp-tabnine"] = {
+    after_files = { "/home/pglandon/.local/share/nvim/site/pack/packer/opt/cmp-tabnine/after/plugin/cmp-tabnine.lua" },
+    load_after = {
+      ["nvim-cmp"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/pglandon/.local/share/nvim/site/pack/packer/opt/cmp-tabnine",
+    url = "https://github.com/tzachar/cmp-tabnine"
+  },
   ["dashboard-nvim"] = {
     loaded = true,
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
@@ -297,7 +307,7 @@ _G.packer_plugins = {
     url = "https://github.com/code-biscuits/nvim-biscuits"
   },
   ["nvim-cmp"] = {
-    after = { "cmp-buffer", "cmp-cmdline", "cmp-nvim-lua", "cmp-path", "cmp-rg", "nvim-autopairs", "tabout.nvim", "cmp-nvim-lsp-document-symbol" },
+    after = { "cmp-buffer", "cmp-cmdline", "cmp-nvim-lua", "cmp-path", "cmp-tabnine", "nvim-autopairs", "cmp-rg", "tabout.nvim", "cmp-nvim-lsp-document-symbol" },
     config = { "require('lsp.cmp')" },
     loaded = false,
     needs_bufread = false,
@@ -349,7 +359,7 @@ _G.packer_plugins = {
     url = "https://github.com/windwp/nvim-spectre"
   },
   ["nvim-treesitter"] = {
-    after = { "nvim-treesitter-textobjects", "nvim-treesitter-textsubjects", "nvim-ts-rainbow", "nvim-autopairs" },
+    after = { "nvim-treesitter-textobjects", "nvim-treesitter-textsubjects", "nvim-ts-rainbow", "nvim-ts-context-commentstring", "nvim-autopairs" },
     loaded = true,
     only_config = true
   },
@@ -377,6 +387,13 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
     url = "https://github.com/windwp/nvim-ts-autotag"
+  },
+  ["nvim-ts-context-commentstring"] = {
+    load_after = {},
+    loaded = true,
+    needs_bufread = false,
+    path = "/home/pglandon/.local/share/nvim/site/pack/packer/opt/nvim-ts-context-commentstring",
+    url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
   },
   ["nvim-ts-hint-textobject"] = {
     loaded = true,
@@ -430,6 +447,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/sniprun",
     url = "https://github.com/michaelb/sniprun"
+  },
+  ["splitjoin.vim"] = {
+    loaded = true,
+    path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/splitjoin.vim",
+    url = "https://github.com/AndrewRadev/splitjoin.vim"
   },
   ["sqlite.lua"] = {
     loaded = true,
@@ -516,10 +538,21 @@ _G.packer_plugins = {
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
   },
+  ["twilight.nvim"] = {
+    config = { "\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rtwilight\frequire\0" },
+    loaded = true,
+    path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/twilight.nvim",
+    url = "https://github.com/folke/twilight.nvim"
+  },
   ultisnips = {
     loaded = true,
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/ultisnips",
     url = "https://github.com/SirVer/ultisnips"
+  },
+  ["vim-repeat"] = {
+    loaded = true,
+    path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
   },
   ["vim-snippets"] = {
     loaded = true,
@@ -536,6 +569,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/vim-ultest",
     url = "https://github.com/rcarriga/vim-ultest"
+  },
+  ["vim-visual-multi"] = {
+    loaded = true,
+    path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/vim-visual-multi",
+    url = "https://github.com/mg979/vim-visual-multi"
   },
   ["which-key.nvim"] = {
     config = { "require('plugins.which-key')" },
@@ -555,6 +593,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for nlsp-settings.nvim]], true)
 try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\17nlspsettings\frequire\0", "config", "nlsp-settings.nvim")
 time([[Config for nlsp-settings.nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+require('plugins.which-key')
+time([[Config for which-key.nvim]], false)
 -- Config for: nvim-neoclip.lua
 time([[Config for nvim-neoclip.lua]], true)
 try_loadstring("\27LJ\2\nW\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\30enable_persistant_history\2\nsetup\fneoclip\frequire\0", "config", "nvim-neoclip.lua")
@@ -563,10 +605,10 @@ time([[Config for nvim-neoclip.lua]], false)
 time([[Config for null-ls.nvim]], true)
 require('lsp.null-ls-config')
 time([[Config for null-ls.nvim]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-require('plugins.gitsigns')
-time([[Config for gitsigns.nvim]], false)
+-- Config for: dial.nvim
+time([[Config for dial.nvim]], true)
+require('plugins.dial')
+time([[Config for dial.nvim]], false)
 -- Config for: session-lens
 time([[Config for session-lens]], true)
 try_loadstring("\27LJ\2\n>\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\17session-lens\frequire\0", "config", "session-lens")
@@ -579,14 +621,14 @@ time([[Config for nvim-spectre]], false)
 time([[Config for nvim-lsp-installer]], true)
 require('lsp.config')
 time([[Config for nvim-lsp-installer]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require('plugins.treesitter')
-time([[Config for nvim-treesitter]], false)
--- Config for: neorg
-time([[Config for neorg]], true)
-require('plugins.neorg')
-time([[Config for neorg]], false)
+-- Config for: twilight.nvim
+time([[Config for twilight.nvim]], true)
+try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rtwilight\frequire\0", "config", "twilight.nvim")
+time([[Config for twilight.nvim]], false)
+-- Config for: toggleterm.nvim
+time([[Config for toggleterm.nvim]], true)
+require('plugins.toggleterm')
+time([[Config for toggleterm.nvim]], false)
 -- Config for: lsp_signature.nvim
 time([[Config for lsp_signature.nvim]], true)
 require('plugins.lsp_signature')
@@ -595,10 +637,10 @@ time([[Config for lsp_signature.nvim]], false)
 time([[Config for nvim-biscuits]], true)
 try_loadstring("\27LJ\2\n¨\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\19default_config\1\0\2\15max_length\3\2\18trim_by_words\2\1\0\3\17min_distance\3\5\15max_length\3\1\18prefix_string\n âœ¨ \nsetup\18nvim-biscuits\frequire\0", "config", "nvim-biscuits")
 time([[Config for nvim-biscuits]], false)
--- Config for: trouble.nvim
-time([[Config for trouble.nvim]], true)
-require('plugins.trouble')
-time([[Config for trouble.nvim]], false)
+-- Config for: calltree.nvim
+time([[Config for calltree.nvim]], true)
+try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rcalltree\frequire\0", "config", "calltree.nvim")
+time([[Config for calltree.nvim]], false)
 -- Config for: diffview.nvim
 time([[Config for diffview.nvim]], true)
 require('plugins.diffview')
@@ -615,26 +657,26 @@ time([[Config for vim-ultest]], false)
 time([[Config for lspsaga.nvim]], true)
 require('plugins.saga')
 time([[Config for lspsaga.nvim]], false)
--- Config for: calltree.nvim
-time([[Config for calltree.nvim]], true)
-try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rcalltree\frequire\0", "config", "calltree.nvim")
-time([[Config for calltree.nvim]], false)
--- Config for: toggleterm.nvim
-time([[Config for toggleterm.nvim]], true)
-require('plugins.toggleterm')
-time([[Config for toggleterm.nvim]], false)
--- Config for: which-key.nvim
-time([[Config for which-key.nvim]], true)
-require('plugins.which-key')
-time([[Config for which-key.nvim]], false)
+-- Config for: neorg
+time([[Config for neorg]], true)
+require('plugins.neorg')
+time([[Config for neorg]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+require('plugins.trouble')
+time([[Config for trouble.nvim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require('plugins.treesitter')
+time([[Config for nvim-treesitter]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\nt\0\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\2B\0\2\1K\0\1\0\ropleader\1\0\1\tline\acc\ftoggler\1\0\0\1\0\1\tline\bccc\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
--- Config for: dial.nvim
-time([[Config for dial.nvim]], true)
-require('plugins.dial')
-time([[Config for dial.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require('plugins.telescope')
+time([[Config for telescope.nvim]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
 require('plugins.lualine')
@@ -651,10 +693,10 @@ time([[Config for stabilize.nvim]], false)
 time([[Config for neogit]], true)
 require('plugins.neogit')
 time([[Config for neogit]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require('plugins.telescope')
-time([[Config for telescope.nvim]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+require('plugins.gitsigns')
+time([[Config for gitsigns.nvim]], false)
 -- Config for: bufferline.nvim
 time([[Config for bufferline.nvim]], true)
 try_loadstring("\27LJ\2\n<\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\15bufferline\frequire\0", "config", "bufferline.nvim")
@@ -674,8 +716,9 @@ time([[Config for git-blame.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter-textsubjects ]]
-vim.cmd [[ packadd nvim-ts-rainbow ]]
 vim.cmd [[ packadd nvim-treesitter-textobjects ]]
+vim.cmd [[ packadd nvim-ts-rainbow ]]
+vim.cmd [[ packadd nvim-ts-context-commentstring ]]
 time([[Sequenced loading]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]

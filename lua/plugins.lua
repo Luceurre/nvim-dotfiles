@@ -12,6 +12,7 @@ return require('packer').startup(function(use)
     use({ 'RRethy/nvim-treesitter-textsubjects', after = { 'nvim-treesitter' } })
     use({ 'p00f/nvim-ts-rainbow', after = { 'nvim-treesitter' } })
     use('windwp/nvim-ts-autotag')
+    use({ 'JoosepAlviste/nvim-ts-context-commentstring', after = 'nvim-treesitter' })
 
     -- LSP
     use('neovim/nvim-lspconfig')
@@ -112,6 +113,7 @@ return require('packer').startup(function(use)
     use({ 'hrsh7th/cmp-path', after = 'nvim-cmp' })
     use({ 'hrsh7th/cmp-buffer', after = 'nvim-cmp' })
     use({ 'hrsh7th/cmp-nvim-lsp-document-symbol', after = 'nvim-cmp' })
+    use({ 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp', after = 'nvim-cmp' })
     use({ 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' })
 
     -- Refactoring
@@ -218,6 +220,19 @@ return require('packer').startup(function(use)
         'luukvbaal/stabilize.nvim',
         config = function()
             require('stabilize').setup()
+        end,
+    })
+    use({ 'AndrewRadev/splitjoin.vim' })
+    use({ 'tpope/vim-repeat' })
+    use({ 'mg979/vim-visual-multi' })
+    use({
+        'folke/twilight.nvim',
+        config = function()
+            require('twilight').setup({
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            })
         end,
     })
 
