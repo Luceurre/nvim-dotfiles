@@ -16,12 +16,12 @@ return require('packer').startup(function(use)
 
     -- LSP
     use('neovim/nvim-lspconfig')
-    use({ 'williamboman/nvim-lsp-installer', config = "require('lsp.config')" })
+    use({ 'williamboman/nvim-lsp-installer', config = "require('plugins.lsp_installer')" })
     use('folke/lua-dev.nvim')
     use({
         'jose-elias-alvarez/null-ls.nvim',
         requires = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
-        config = "require('lsp.null-ls-config')",
+        config = "require('lsp.null-ls')",
     })
     use('folke/lsp-colors.nvim')
     use({ 'tami5/lspsaga.nvim', config = "require('plugins.saga')" })
@@ -104,7 +104,7 @@ return require('packer').startup(function(use)
     use({
         'hrsh7th/nvim-cmp',
         event = 'InsertEnter',
-        config = "require('lsp.cmp')",
+        config = "require('plugins.cmp')",
     })
     use({ 'hrsh7th/cmp-nvim-lsp', requires = 'hrsh7th/nvim-cmp' })
     use({ 'hrsh7th/cmp-nvim-lua', requires = 'hrsh7th/nvim-cmp', after = { 'nvim-cmp' } })
