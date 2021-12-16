@@ -30,9 +30,13 @@
     - [ ] setup linting
     - [ ] setup formating
     - [ ] setup editorconfig
+    - [ ] setup fast tag browsing
  ** Refactoring
     - [ ] setup rename
     - [ ] move
     - [ ] telescope refactoring window
   - [ ] setup snippets
   - [ ] setup folding
+ ** Neovim
+    - [ ] Close all buffers that are not in git status 
+    - [ ] Repeat movement motions with "."

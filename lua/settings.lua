@@ -67,3 +67,15 @@ let g:asyncomplete_log_file = expand('~/asyncomplete.log')
 vim.cmd([[
 filetype on
 ]])
+
+vim.cmd([[
+set exrc
+]])
+
+vim.cmd([[
+  let g:python3_host_prog = '/home/pglandon/.pyenv/versions/py3nvim/bin/python'
+]])
+
+vim.cmd([[
+let g:loaded_matchit = 1
+]])

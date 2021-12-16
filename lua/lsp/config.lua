@@ -27,6 +27,19 @@ lsp_installer.on_server_ready(function(server)
     --         end,
     --     }
     -- end
+    if server.name == 'pyright' then
+        opts.settings = {
+            python = {
+                venvPath = '/home/pglandon/.cache/pypoetry/virtualenvs/pocket-kitchen-api-vKqzRVaT-py3.10/',
+            },
+        }
+        opts.on_attach = function(client)
+            client.resolved_capabilities.document_formatting = false
+            client.resolved_capabilities.document_range_formatting = false
+            require('lsp_signature').on_attach()
+        end
+    end
+
     if server.name == 'jsonls' then
         opts.settings = {
             json = {

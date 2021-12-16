@@ -37,6 +37,13 @@ local sources = {
 
     -- Git
     null_ls.builtins.code_actions.gitsigns,
+
+    -- Python
+    null_ls.builtins.formatting.black,
+    null_ls.builtins.formatting.djhtml,
+    null_ls.builtins.formatting.isort,
+    null_ls.builtins.diagnostics.flake8,
+    null_ls.builtins.diagnostics.pylint,
 }
 
 null_ls.config({ sources = sources, debug = true })

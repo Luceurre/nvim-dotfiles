@@ -118,6 +118,10 @@ wk.register({
         s = { '<cmd>lua require"gitsigns".stage_buffer()<CR>', 'Stage' },
         r = { '<cmd>lua require"gitsigns".reset_buffer()<CR>', 'Reset' },
         f = { '<cmd>lua require("telescope.builtin").buffers()<CR>', 'Find' },
+        n = { '<cmd>bn<CR>', 'Next' },
+        p = { '<cmd>bp<CR>', 'Previous' },
+        d = { '<cmd>bd<CR>', 'Delete' },
+        ['<Tab>'] = { '<cmd>b#<CR>', 'Switch' },
     },
     v = {
         name = 'Version',
@@ -131,6 +135,7 @@ wk.register({
     o = {
         name = 'Open',
         t = { '<Cmd>exe v:count1 . "ToggleTerm"<CR>', 'Terminal' },
+        T = { '<cmd>edit! ~/.config/nvim/todos.norg<CR>', 'TODOs' },
     },
     s = {
         name = 'Search',
@@ -303,4 +308,14 @@ vnoremap jk <ESC>
 vnoremap <C-g> <ESC>
 inoremap jk <ESC>
 inoremap <C-g> <ESC>
+]])
+
+-- Move line up/down
+vim.cmd([[
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 ]])
