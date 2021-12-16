@@ -46,7 +46,4 @@ local sources = {
     null_ls.builtins.diagnostics.pylint,
 }
 
-null_ls.config({ sources = sources, debug = true })
-require('lspconfig')['null-ls'].setup({
-    on_attach = on_attach,
-})
+null_ls.setup({ sources = sources, debug = true, on_attach = on_attach })
