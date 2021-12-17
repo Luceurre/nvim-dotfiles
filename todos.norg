@@ -11,8 +11,8 @@
   - [x] format on save
  ** add telescope keybindings
     - [x] for project file search
-    - [ ] for git file search
-    - [ ] for regex
+    - [x] for git file search
+    - [x] for regex
     - [ ] for project symbol
   - [x] setup "basic" autocompletion
  ** Lua
@@ -22,15 +22,17 @@
  ** Theme
     - [x] update status line
     - [x] change this ugly ass theme
- - [ ] clean up file structure
+ - [x] clean up file structure
  - [ ] setup git flow
  - [ ] setup terminal
  ** Typescript/React
-    - [ ] setup completion
-    - [ ] setup linting
-    - [ ] setup formating
-    - [ ] setup editorconfig
-    - [ ] setup fast tag browsing
+    - [x] setup completion
+    - [x] setup linting
+    - [x] setup formating
+    - [x] setup editorconfig
+    - [x] setup fast tag browsing
+    - [ ] setup testing
+    - [ ] setup import cleanup on save
  ** Refactoring
     - [ ] setup rename
     - [ ] move
