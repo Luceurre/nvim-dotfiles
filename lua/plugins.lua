@@ -235,6 +235,11 @@ return require('packer').startup(function(use)
             })
         end,
     })
+    -- Show cursor location after a motion
+    use({
+        'edluffy/specs.nvim',
+        config = "require('plugins.specs')",
+    })
 
     --- Typescript
     use({ 'jose-elias-alvarez/nvim-lsp-ts-utils', requires = { 'nvim-lua/plenary.nvim' } })
