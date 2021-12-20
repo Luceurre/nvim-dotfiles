@@ -301,6 +301,16 @@ return require('packer').startup(function(use)
     })
 
     -- Tests
+    use('preservim/vimux')
+    use({
+        'vim-test/vim-test',
+        config = function()
+            vim.cmd([[
+        let test#strategy = "vimux"
+        let g:VimuxHeight = "30"
+    ]])
+        end,
+    })
     use({
         'rcarriga/vim-ultest',
         requires = { 'vim-test/vim-test' },
@@ -314,4 +324,5 @@ return require('packer').startup(function(use)
     use({ 'akinsho/toggleterm.nvim', config = "require('plugins.toggleterm')" })
     use({ 'michaelb/sniprun', run = 'bash ./install.sh' })
     use('pianocomposer321/yabs.nvim')
+    use('christoomey/vim-tmux-navigator')
 end)
