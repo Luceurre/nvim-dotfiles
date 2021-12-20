@@ -251,6 +251,20 @@ wk.register({
     --     'Snipe',
     -- },
 })
+
+-- Visual
+
+wk.register({
+    ['<leader>'] = {
+        c = {
+            name = 'Code',
+            a = { "<cmd>'<,'>lua vim.lsp.buf.range_code_action()<CR>", 'Code Action' },
+        },
+    },
+}, {
+    mode = 'v', -- NORMAL mode
+})
+
 -- TODO: add those to which-key
 vim.api.nvim_set_keymap(
     'o',
