@@ -240,6 +240,12 @@ return require('packer').startup(function(use)
         'edluffy/specs.nvim',
         config = "require('plugins.specs')",
     })
+    use({
+        'beauwilliams/focus.nvim',
+        config = function()
+            require('focus').setup({ compatible_filetrees = {}, excluded_filetypes = { 'CHADTree' } })
+        end,
+    })
 
     --- Typescript
     use({ 'jose-elias-alvarez/nvim-lsp-ts-utils', requires = { 'nvim-lua/plenary.nvim' } })
