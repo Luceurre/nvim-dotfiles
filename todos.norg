@@ -42,3 +42,7 @@
  ** Neovim
     - [ ] Close all buffers that are not in git status 
     - [ ] Repeat movement motions with "."
+ ** Git
+   - [ ] Open lazygit in a new tmux pane in fullscreen
+   - [ ] Editing a file use currently open neovim instance: see https://github.com/mhinz/neovim-remote and https://githubmemory.com/repo/ChristianChiarulli/LunarVim/issues/1346
+   - [ ] Custom keybindings to go switch between Neovim/Lazygit

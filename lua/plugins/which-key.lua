@@ -66,6 +66,10 @@ wk.setup({
 })
 
 wk.register({
+    r = {
+        name = 'Refactor',
+        f = { '<cmd>lua vim.lsp.buf.rename()<CR>', 'Rename' },
+    },
     p = {
         name = 'Project',
         f = { '<cmd>SearchSession<CR>', 'Find' },

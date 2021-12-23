@@ -65,7 +65,13 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 }
 
 local opts = {
-    init_options = require('nvim-lsp-ts-utils').init_options,
+    init_options = vim.tbl_deep_extend('force', require('nvim-lsp-ts-utils').init_options, {
+        logVerbosity = 'off',
+        maxTsServerMemory = 16384,
+        preferences = {
+            jsxAttributeCompletionStyle = 'auto',
+        },
+    }),
     capabilities = capabilities,
     on_attach = on_attach,
 }
