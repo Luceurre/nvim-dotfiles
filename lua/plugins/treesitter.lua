@@ -69,4 +69,7 @@ require('nvim-treesitter.configs').setup({
     matchup = {
         enable = true,
     },
+    context_commentstring = {
+        enable = true,
+    },
 })

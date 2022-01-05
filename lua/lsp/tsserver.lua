@@ -65,8 +65,14 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 }
 
 local opts = {
+    cmd = {
+        'typescript-language-server',
+        '--stdio',
+        '--tsserver-log-file',
+        '/home/pglandon/.local/lsp/tsserver/logs.txt',
+    },
     init_options = vim.tbl_deep_extend('force', require('nvim-lsp-ts-utils').init_options, {
-        logVerbosity = 'off',
+        logVerbosity = 'verbose',
         maxTsServerMemory = 16384,
         preferences = {
             jsxAttributeCompletionStyle = 'auto',
