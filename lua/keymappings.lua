@@ -21,6 +21,10 @@ local function omap(lhs, rhs, opts)
     map('o', lhs, rhs, opts)
 end
 
+local function imap(lhs, rhs, opts)
+    map('i', lhs, rhs, opts)
+end
+
 local function setup_colemak()
     print('Colemak layout')
 
@@ -34,13 +38,13 @@ local function setup_colemak()
         mapper('u', 'i')
         mapper('f', 'e')
         mapper('t', 'f')
-        mapper('y', 'o')
         mapper('j', 'y')
         mapper('l', 'u')
         mapper('s', 'd')
         mapper(';', 'p')
     end
 
+    imap('tn', '<ESC>')
     colemak_mode = true
 end
 
@@ -74,6 +78,32 @@ local function setup(options)
         T = {
             name = 'Toggle',
             l = { switch_mode, 'Layout' },
+        },
+        N = {
+            name = 'Neovim',
+            r = { '<CMD>source $MYVIMRC<CR>', 'Reload' },
+        },
+        d = {
+            name = 'Diagnostics',
+            o = {
+                '<CMD>Trouble<CR>',
+                'Open',
+            },
+            t = {
+                '<CMD>TroubleToggle<CR>',
+                'Toggle',
+            },
+            e = {
+                '<CMD>lua vim.diagnostic.goto_next()<CR>',
+                'Next',
+            },
+        },
+        f = {
+            name = 'Find',
+            f = {
+                '<CMD>Telescope find_files<CR>',
+                'File',
+            },
         },
     }, {
         prefix = '<leader>',

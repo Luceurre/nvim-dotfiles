@@ -1,9 +1,12 @@
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local function setup(config)
+    local luadev = require('lua-dev').setup({
+        lspconfig = config,
+        runtime_path = true,
+    })
 
-local luadev = require('lua-dev').setup({
-    lspconfig = {
-        capabilities = capabilities,
-    },
-})
+    return luadev
+end
 
-return luadev
+return {
+    setup = setup,
+}

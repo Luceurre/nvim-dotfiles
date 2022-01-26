@@ -16,5 +16,15 @@ return require('packer').startup(function(use)
     use({ 'SirVer/ultisnips', config = "require('plugins/ultisnips')" })
     use('hrsh7th/cmp-nvim-lsp')
     use({ 'hrsh7th/nvim-cmp', config = "require('plugins/nvim-cmp')" })
-    use({ 'jose-elias-alvarez/null-ls.nvim', config = "require('plugins/null-ls')", requires = 'nvim-lua/plenary.nvim' })
+    use({
+        'jose-elias-alvarez/null-ls.nvim',
+        config = "require('plugins/null-ls')",
+        requires = 'nvim-lua/plenary.nvim',
+    })
+    use({ 'folke/trouble.nvim', requires = 'kyazdani42/nvim-web-devicons', config = "require('plugins/trouble')" })
+    use({ 'windwp/nvim-autopairs', config = "require('plugins/nvim-autopairs')" })
+    use({ 'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim' })
+    use({ 'nvim-treesitter/nvim-treesitter', config = "require('plugins/nvim-treesitter')" })
+    use('christoomey/vim-tmux-navigator')
+    use({ 'jose-elias-alvarez/nvim-lsp-ts-utils', requires = 'nvim-lua/plenary.nvim' })
 end)
