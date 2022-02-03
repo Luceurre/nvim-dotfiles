@@ -23,9 +23,14 @@ return require('packer').startup(function(use)
     })
     use({ 'folke/trouble.nvim', requires = 'kyazdani42/nvim-web-devicons', config = "require('plugins/trouble')" })
     use({ 'windwp/nvim-autopairs', config = "require('plugins/nvim-autopairs')" })
-    use({ 'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim' })
+    use({
+        'nvim-telescope/telescope.nvim',
+        requires = 'nvim-lua/plenary.nvim',
+        config = "require('plugins/telescope')",
+    })
     use({ 'nvim-treesitter/nvim-treesitter', config = "require('plugins/nvim-treesitter')" })
     use('christoomey/vim-tmux-navigator')
     use({ 'jose-elias-alvarez/nvim-lsp-ts-utils', requires = 'nvim-lua/plenary.nvim' })
-		use('kmonad/kmonad-vim')
+    use('kmonad/kmonad-vim')
+    use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
 end)
