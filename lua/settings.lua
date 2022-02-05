@@ -35,4 +35,6 @@ vim.o.shortmess = vim.o.shortmess .. 'c' --- Don't pass messages to |ins-complet
 
 vim.cmd([[
 	colorscheme tokyonight
+	let g:python3_host_prog = '/home/pglandon/.pyenv/versions/pynvim/bin/python'
+	let g:python2_host_prog = '/home/pglandon/.pyenv/versions/py2nvim/bin/python'
 ]])
