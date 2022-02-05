@@ -42,6 +42,7 @@ local function setup_colemak()
         mapper('l', 'u')
         mapper('s', 'd')
         mapper(';', 'p')
+				mapper(',', 'n')
     end
 
     imap('tn', '<ESC>')
