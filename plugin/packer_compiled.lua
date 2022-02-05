@@ -44,8 +44,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/pglandon/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?.lua;/home/pglandon/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?/init.lua;/home/pglandon/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?.lua;/home/pglandon/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/pglandon/.cache/nvim/packer_hererocks/2.0.5/lib/lua/5.1/?.so"
+local package_path_str = "/home/pglandon/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/pglandon/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/pglandon/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/pglandon/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/pglandon/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -73,6 +73,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["kmonad-vim"] = {
+    loaded = true,
+    path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/kmonad-vim",
+    url = "https://github.com/kmonad/kmonad-vim"
   },
   ["lua-dev.nvim"] = {
     loaded = true,
@@ -134,7 +139,13 @@ _G.packer_plugins = {
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/rainbow_csv",
     url = "https://github.com/mechatroner/rainbow_csv"
   },
+  ["telescope-fzf-native.nvim"] = {
+    loaded = true,
+    path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
+  },
   ["telescope.nvim"] = {
+    config = { "require('plugins/telescope')" },
     loaded = true,
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
@@ -198,10 +209,71 @@ time([[Config for nvim-autopairs]], false)
 time([[Config for ultisnips]], true)
 require('plugins/ultisnips')
 time([[Config for ultisnips]], false)
+||||||| 8362be5
+-- Config for: null-ls.nvim
+time([[Config for null-ls.nvim]], true)
+require('plugins/null-ls')
+time([[Config for null-ls.nvim]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+require('plugins/trouble')
+time([[Config for trouble.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require('plugins/nvim-cmp')
+time([[Config for nvim-cmp]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+require('plugins/which-key')
+time([[Config for which-key.nvim]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+require('plugins/nvim-lspconfig')
+time([[Config for nvim-lspconfig]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+require('plugins/nvim-autopairs')
+time([[Config for nvim-autopairs]], false)
+-- Config for: ultisnips
+time([[Config for ultisnips]], true)
+require('plugins/ultisnips')
+time([[Config for ultisnips]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 require('plugins/nvim-treesitter')
 time([[Config for nvim-treesitter]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+require('plugins/trouble')
+time([[Config for trouble.nvim]], false)
+-- Config for: ultisnips
+time([[Config for ultisnips]], true)
+require('plugins/ultisnips')
+time([[Config for ultisnips]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require('plugins/nvim-cmp')
+time([[Config for nvim-cmp]], false)
+-- Config for: null-ls.nvim
+time([[Config for null-ls.nvim]], true)
+require('plugins/null-ls')
+time([[Config for null-ls.nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+require('plugins/which-key')
+time([[Config for which-key.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require('plugins/telescope')
+time([[Config for telescope.nvim]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+require('plugins/nvim-autopairs')
+time([[Config for nvim-autopairs]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+require('plugins/nvim-lspconfig')
+time([[Config for nvim-lspconfig]], false)
 if should_profile then save_profiles() end
 
 end)

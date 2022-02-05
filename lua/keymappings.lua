@@ -60,6 +60,11 @@ local function setup_qwerty()
         omap(char, char)
     end
 
+		imap('jk', '<ESC>')
+		vmap('jk', '<ESC>')
+		omap('jk', '<ESC>')
+		nmap('jk', '<ESC>')
+
     colemak_mode = false
 end
 
