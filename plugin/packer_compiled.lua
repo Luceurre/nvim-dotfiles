@@ -172,6 +172,11 @@ _G.packer_plugins = {
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/ultisnips",
     url = "https://github.com/SirVer/ultisnips"
   },
+  ["vim-devicons"] = {
+    loaded = true,
+    path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/vim-devicons",
+    url = "https://github.com/ryanoasis/vim-devicons"
+  },
   ["vim-tmux-navigator"] = {
     loaded = true,
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
@@ -202,18 +207,18 @@ time([[Config for which-key.nvim]], false)
 time([[Config for trouble.nvim]], true)
 require('plugins/trouble')
 time([[Config for trouble.nvim]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-require('plugins/nvim-autopairs')
-time([[Config for nvim-autopairs]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require('plugins/nvim-treesitter')
-time([[Config for nvim-treesitter]], false)
 -- Config for: ultisnips
 time([[Config for ultisnips]], true)
 require('plugins/ultisnips')
 time([[Config for ultisnips]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require('plugins/nvim-treesitter')
+time([[Config for nvim-treesitter]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+require('plugins/nvim-autopairs')
+time([[Config for nvim-autopairs]], false)
 -- Config for: null-ls.nvim
 time([[Config for null-ls.nvim]], true)
 require('plugins/null-ls')
