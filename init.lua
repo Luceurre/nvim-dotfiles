@@ -1,6 +1,6 @@
 require('plugins')
 require('keymappings').setup({
-    colemak_mode = false,
+    colemak_mode = true,
 })
 
 require('settings')
