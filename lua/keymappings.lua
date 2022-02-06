@@ -28,24 +28,11 @@ end
 local function setup_colemak()
     print('Colemak layout')
 
-    local mappers = { nmap, vmap, omap }
-
-    for _, mapper in ipairs(mappers) do
-        mapper('n', 'h')
-        mapper('e', 'j')
-        mapper('i', 'k')
-        mapper('o', 'l')
-        mapper('u', 'i')
-        mapper('f', 'e')
-        mapper('t', 'f')
-        mapper('j', 'y')
-        mapper('l', 'u')
-        mapper('s', 'd')
-        mapper(';', 'p')
-				mapper(',', 'n')
-    end
-
     imap('tn', '<ESC>')
+    vmap('tn', '<ESC>')
+    omap('tn', '<ESC>')
+    nmap('tn', '<ESC>')
+
     colemak_mode = true
 end
 
@@ -60,10 +47,10 @@ local function setup_qwerty()
         omap(char, char)
     end
 
-		imap('jk', '<ESC>')
-		vmap('jk', '<ESC>')
-		omap('jk', '<ESC>')
-		nmap('jk', '<ESC>')
+    imap('jk', '<ESC>')
+    vmap('jk', '<ESC>')
+    omap('jk', '<ESC>')
+    nmap('jk', '<ESC>')
 
     colemak_mode = false
 end
@@ -109,6 +96,13 @@ local function setup(options)
             f = {
                 '<CMD>Telescope find_files<CR>',
                 'File',
+            },
+        },
+        o = {
+            name = 'Open',
+            f = {
+                '<CMD>CHADopen<CR>',
+                'File Tree',
             },
         },
     }, {
