@@ -3,7 +3,7 @@ local wk = require('which-key')
 
 local function setup_keymap_on_attach()
     wk.register({
-        d = {
+        g = {
             name = 'Goto',
             d = {
                 '<CMD>lua vim.lsp.buf.definition()<CR>',
