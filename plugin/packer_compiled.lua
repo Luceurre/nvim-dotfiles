@@ -69,6 +69,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  chadtree = {
+    loaded = true,
+    path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/chadtree",
+    url = "https://github.com/ms-jpq/chadtree"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -181,10 +186,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require('plugins/telescope')
-time([[Config for telescope.nvim]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+require('plugins/nvim-lspconfig')
+time([[Config for nvim-lspconfig]], false)
 -- Config for: nvim-cmp
 time([[Config for nvim-cmp]], true)
 require('plugins/nvim-cmp')
@@ -197,10 +202,10 @@ time([[Config for which-key.nvim]], false)
 time([[Config for trouble.nvim]], true)
 require('plugins/trouble')
 time([[Config for trouble.nvim]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require('plugins/nvim-lspconfig')
-time([[Config for nvim-lspconfig]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+require('plugins/nvim-autopairs')
+time([[Config for nvim-autopairs]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 require('plugins/nvim-treesitter')
@@ -209,14 +214,14 @@ time([[Config for nvim-treesitter]], false)
 time([[Config for ultisnips]], true)
 require('plugins/ultisnips')
 time([[Config for ultisnips]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-require('plugins/nvim-autopairs')
-time([[Config for nvim-autopairs]], false)
 -- Config for: null-ls.nvim
 time([[Config for null-ls.nvim]], true)
 require('plugins/null-ls')
 time([[Config for null-ls.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require('plugins/telescope')
+time([[Config for telescope.nvim]], false)
 if should_profile then save_profiles() end
 
 end)
