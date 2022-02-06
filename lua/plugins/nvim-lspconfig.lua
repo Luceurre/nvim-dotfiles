@@ -10,6 +10,15 @@ local function setup_keymap_on_attach()
                 'Definition',
             },
         },
+        ['<leader>'] = {
+            l = {
+                name = 'LSP',
+                a = {
+                    '<CMD>lua vim.lsp.buf.code_action()<CR>',
+                    'Actions',
+                },
+            },
+        },
     })
 end
 
