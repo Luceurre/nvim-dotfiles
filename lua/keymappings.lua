@@ -109,6 +109,43 @@ local function setup(options)
         prefix = '<leader>',
     })
 
+    nmap(
+        'f',
+        "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>"
+    )
+    omap(
+        'f',
+        "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>"
+    )
+    map(
+        '',
+        'f',
+        "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>"
+    )
+    nmap(
+        'F',
+        "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>"
+    )
+    omap(
+        'F',
+        "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>"
+    )
+    map(
+        '',
+        'F',
+        "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>"
+    )
+    nmap('s', "<cmd>lua require('hop').hint_char2({direction = require('hop.hint').HintDirection.AFTER_CURSOR})<cr>")
+    omap('s', "<cmd>lua require('hop').hint_char2({direction = require('hop.hint').HintDirection.AFTER_CURSOR})<cr>")
+    map('', 's', "<cmd>lua require('hop').hint_char2({direction = require('hop.hint').HintDirection.AFTER_CURSOR})<cr>")
+    nmap('S', "<cmd>lua require('hop').hint_char2({direction = require('hop.hint').HintDirection.BEFORE_CURSOR})<cr>")
+    omap('S', "<cmd>lua require('hop').hint_char2({direction = require('hop.hint').HintDirection.BEFORE_CURSOR})<cr>")
+    map(
+        '',
+        'S',
+        "<cmd>lua require('hop').hint_char2({direction = require('hop.hint').HintDirection.BEFORE_CURSOR})<cr>"
+    )
+
     if options.colemak_mode == true then
         setup_colemak()
         return
