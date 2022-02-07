@@ -4,3 +4,4 @@ require('keymappings').setup({
 })
 
 require('settings')
+require('autocmd')
