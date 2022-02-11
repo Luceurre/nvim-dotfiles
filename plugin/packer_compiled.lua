@@ -74,10 +74,20 @@ _G.packer_plugins = {
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/chadtree",
     url = "https://github.com/ms-jpq/chadtree"
   },
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
   },
   ["hop.nvim"] = {
     config = { "require('plugins.hop')" },
@@ -130,6 +140,12 @@ _G.packer_plugins = {
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-ts-autotag"] = {
+    config = { "require('plugins.nvim-ts-autotag')" },
+    loaded = true,
+    path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
+    url = "https://github.com/windwp/nvim-ts-autotag"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -149,6 +165,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/rainbow_csv",
     url = "https://github.com/mechatroner/rainbow_csv"
+  },
+  ropevim = {
+    loaded = true,
+    path = "/home/pglandon/.local/share/nvim/site/pack/packer/start/ropevim",
+    url = "https://github.com/python-rope/ropevim"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
@@ -201,46 +222,51 @@ time([[Defining packer_plugins]], false)
 time([[Config for hop.nvim]], true)
 require('plugins.hop')
 time([[Config for hop.nvim]], false)
--- Config for: ultisnips
-time([[Config for ultisnips]], true)
-require('plugins/ultisnips')
-time([[Config for ultisnips]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require('plugins/nvim-lspconfig')
-time([[Config for nvim-lspconfig]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require('plugins/nvim-treesitter')
-time([[Config for nvim-treesitter]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require('plugins/telescope')
-time([[Config for telescope.nvim]], false)
 -- Config for: which-key.nvim
 time([[Config for which-key.nvim]], true)
 require('plugins/which-key')
 time([[Config for which-key.nvim]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-require('plugins/nvim-autopairs')
-time([[Config for nvim-autopairs]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-require('plugins/nvim-cmp')
-time([[Config for nvim-cmp]], false)
--- Config for: null-ls.nvim
-time([[Config for null-ls.nvim]], true)
-require('plugins/null-ls')
-time([[Config for null-ls.nvim]], false)
 -- Config for: trouble.nvim
 time([[Config for trouble.nvim]], true)
 require('plugins/trouble')
 time([[Config for trouble.nvim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require('plugins/nvim-treesitter')
+time([[Config for nvim-treesitter]], false)
+-- Config for: null-ls.nvim
+time([[Config for null-ls.nvim]], true)
+require('plugins/null-ls')
+time([[Config for null-ls.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require('plugins/nvim-cmp')
+time([[Config for nvim-cmp]], false)
+-- Config for: nvim-ts-autotag
+time([[Config for nvim-ts-autotag]], true)
+require('plugins.nvim-ts-autotag')
+time([[Config for nvim-ts-autotag]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+require('plugins/nvim-autopairs')
+time([[Config for nvim-autopairs]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+require('plugins/nvim-lspconfig')
+time([[Config for nvim-lspconfig]], false)
+-- Config for: ultisnips
+time([[Config for ultisnips]], true)
+require('plugins/ultisnips')
+time([[Config for ultisnips]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require('plugins/telescope')
+time([[Config for telescope.nvim]], false)
 if should_profile then save_profiles() end
 
 end)
 
 if not no_errors then
+  error_msg = error_msg:gsub('"', '\\"')
   vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end

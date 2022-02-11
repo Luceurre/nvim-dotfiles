@@ -5,7 +5,7 @@ local function setup(config)
                 venvPath = '/home/pglandon/.cache/pypoetry/virtualenvs',
                 analysis = {
                     diagnosticMode = 'workspace',
-                    typeCheckingMode = 'strict',
+                    typeCheckingMode = 'off',
                     useLibraryCodeForTypes = true,
                 },
                 pyright = {

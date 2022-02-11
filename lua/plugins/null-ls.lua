@@ -10,10 +10,33 @@ local sources = {
     null_ls.builtins.diagnostics.selene,
 
     -- Python
-    null_ls.builtins.diagnostics.pylama,
-    null_ls.builtins.formatting.black,
-    null_ls.builtins.formatting.djhtml,
-    null_ls.builtins.formatting.isort,
+    null_ls.builtins.diagnostics.pylama.with({
+        only_local = '.venv/bin',
+        extra_args = { '-l', '"pylint"' },
+    }),
+
+    -- Typescript
+    null_ls.builtins.diagnostics.eslint_d,
+    null_ls.builtins.code_actions.eslint_d,
+    null_ls.builtins.formatting.eslint_d,
+    null_ls.builtins.formatting.prettierd.with({
+        filetypes = {
+            'javascript',
+            'javascriptreact',
+            'typescript',
+            'typescriptreact',
+            'vue',
+            'css',
+            'scss',
+            'less',
+            'html',
+            'json',
+            'yaml',
+            'markdown',
+            'graphql',
+            'java',
+        },
+    }),
 }
 
 null_ls.setup({ sources = sources, debug = true, on_attach = on_attach })

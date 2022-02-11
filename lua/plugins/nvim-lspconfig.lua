@@ -35,5 +35,7 @@ local config = {
 nvim_lsp.sumneko_lua.setup(require('plugins/nvim-lspconfig/sumneko_lua').setup(config))
 
 nvim_lsp.pyright.setup(require('plugins/nvim-lspconfig/pyright').setup(config))
+nvim_lsp.pylsp.setup(require('plugins.nvim-lspconfig.pylsp').setup(config))
 
 nvim_lsp.tsserver.setup(require('plugins/nvim-lspconfig/tsserver').setup(config))
+nvim_lsp.tailwindcss.setup(require('plugins.nvim-lspconfig.tailwindcss').setup(config))
