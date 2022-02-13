@@ -105,6 +105,13 @@ local function setup(options)
                 'File Tree',
             },
         },
+        b = {
+            name = 'Buffer',
+            k = {
+                '<CMD>b#|bd#<CR>',
+                'Kill',
+            },
+        },
     }, {
         prefix = '<leader>',
     })
