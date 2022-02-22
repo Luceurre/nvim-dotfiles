@@ -12,8 +12,10 @@ local sources = {
     -- Python
     null_ls.builtins.diagnostics.pylama.with({
         only_local = '.venv/bin',
-        extra_args = { '-l', '"pylint"' },
+        extra_args = { '-l', '"pylint,mypy"' },
     }),
+    null_ls.builtins.formatting.isort,
+    null_ls.builtins.formatting.black,
 
     -- Typescript
     null_ls.builtins.diagnostics.eslint_d,

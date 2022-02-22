@@ -218,10 +218,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: ultisnips
-time([[Config for ultisnips]], true)
-require('plugins/ultisnips')
-time([[Config for ultisnips]], false)
 -- Config for: null-ls.nvim
 time([[Config for null-ls.nvim]], true)
 require('plugins/null-ls')
@@ -230,10 +226,10 @@ time([[Config for null-ls.nvim]], false)
 time([[Config for nvim-ts-autotag]], true)
 require('plugins.nvim-ts-autotag')
 time([[Config for nvim-ts-autotag]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-require('plugins/nvim-autopairs')
-time([[Config for nvim-autopairs]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require('plugins/telescope')
+time([[Config for telescope.nvim]], false)
 -- Config for: hop.nvim
 time([[Config for hop.nvim]], true)
 require('plugins.hop')
@@ -242,6 +238,10 @@ time([[Config for hop.nvim]], false)
 time([[Config for nvim-cmp]], true)
 require('plugins/nvim-cmp')
 time([[Config for nvim-cmp]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+require('plugins/trouble')
+time([[Config for trouble.nvim]], false)
 -- Config for: which-key.nvim
 time([[Config for which-key.nvim]], true)
 require('plugins/which-key')
@@ -250,18 +250,18 @@ time([[Config for which-key.nvim]], false)
 time([[Config for nvim-lspconfig]], true)
 require('plugins/nvim-lspconfig')
 time([[Config for nvim-lspconfig]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require('plugins/telescope')
-time([[Config for telescope.nvim]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+require('plugins/nvim-autopairs')
+time([[Config for nvim-autopairs]], false)
+-- Config for: ultisnips
+time([[Config for ultisnips]], true)
+require('plugins/ultisnips')
+time([[Config for ultisnips]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 require('plugins/nvim-treesitter')
 time([[Config for nvim-treesitter]], false)
--- Config for: trouble.nvim
-time([[Config for trouble.nvim]], true)
-require('plugins/trouble')
-time([[Config for trouble.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

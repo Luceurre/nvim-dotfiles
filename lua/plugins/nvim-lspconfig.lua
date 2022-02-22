@@ -46,13 +46,6 @@ end
 
 local function on_attach()
     setup_keymap_on_attach()
-
-    vim.cmd([[
-			augroup LspSignature
-				autocmd!
-				autocmd CursorMovedI * Lspsaga signature_help
-			augroup end
-		]])
 end
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -68,3 +61,5 @@ nvim_lsp.pylsp.setup(require('plugins.nvim-lspconfig.pylsp').setup(config))
 
 nvim_lsp.tsserver.setup(require('plugins/nvim-lspconfig/tsserver').setup(config))
 nvim_lsp.tailwindcss.setup(require('plugins.nvim-lspconfig.tailwindcss').setup(config))
+
+nvim_lsp.dartls.setup(require('plugins.nvim-lspconfig.dartls').setup(config))
