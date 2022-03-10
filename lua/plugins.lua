@@ -34,4 +34,10 @@ return require('packer').startup(function(use)
     use('hrsh7th/cmp-buffer')
     use('hrsh7th/cmp-path')
     use({ 'tami5/lspsaga.nvim' })
+    use({
+        'nvim-neorg/neorg',
+        requires = { 'nvim-lua/plenary.nvim', 'nvim-neorg/neorg-telescope', 'esquires/neorg-gtd-project-tags' },
+        config = "require('plugins.neorg')",
+    })
+    use('nvim-treesitter/playground')
 end)
